@@ -102,11 +102,15 @@ jobs:
           $start.RedirectStandardOutput = $true
           $start.RedirectStandardError = $true
           $start.Environment.Clear()
-          foreach ($name in @('SystemRoot', 'WINDIR', 'PATH', 'COMPUTERNAME', 'ProgramData', 'ProgramFiles', 'ProgramFiles(x86)')) {
+          # Keep the ephemeral runner account's real Windows profile paths:
+          # rewriting them can stall graphics/window initialization. Application
+          # settings remain beside the copied EXE in this new empty directory.
+          # The explicit allowlist does not inherit Actions credentials or tokens.
+          foreach ($name in @('SystemRoot', 'SystemDrive', 'WINDIR', 'PATH', 'COMPUTERNAME', 'USERDOMAIN', 'USERNAME', 'ProgramData', 'ProgramFiles', 'ProgramFiles(x86)', 'USERPROFILE', 'APPDATA', 'LOCALAPPDATA')) {
             $value = [Environment]::GetEnvironmentVariable($name)
             if ($value) { $start.Environment[$name] = $value }
           }
-          foreach ($name in @('TEMP', 'TMP', 'USERPROFILE', 'APPDATA', 'LOCALAPPDATA')) { $start.Environment[$name] = $directory }
+          foreach ($name in @('TEMP', 'TMP')) { $start.Environment[$name] = $directory }
           $process = [Diagnostics.Process]::new()
           $process.StartInfo = $start
           $started = $false
@@ -117,15 +121,22 @@ jobs:
             $stderr = $process.StandardError.ReadToEndAsync()
             $deadline = [DateTime]::UtcNow.AddSeconds(30)
             $window = [IntPtr]::Zero
+            $responsive = $false
             while ([DateTime]::UtcNow -lt $deadline -and -not $process.HasExited) {
               $window = [PackageWindow]::Find([uint32]$process.Id)
-              if ($window -ne [IntPtr]::Zero) { break }
+              if ($window -ne [IntPtr]::Zero) {
+                # Window creation precedes renderer/application initialization.
+                # Readiness, not the first HWND, completes the startup phase.
+                [UIntPtr]$response = [UIntPtr]::Zero
+                $responsive = [PackageWindow]::SendMessageTimeoutW($window, 0, [UIntPtr]::Zero, [IntPtr]::Zero, 3, 500, [ref]$response) -ne [IntPtr]::Zero
+                if ($responsive) { break }
+              }
               Start-Sleep -Milliseconds 100
             }
-            if ($process.HasExited -or $window -eq [IntPtr]::Zero) { throw 'Startup smoke failed.' }
-            [UIntPtr]$response = [UIntPtr]::Zero
-            if ([PackageWindow]::SendMessageTimeoutW($window, 0, [UIntPtr]::Zero, [IntPtr]::Zero, 3, 2000, [ref]$response) -eq [IntPtr]::Zero) { throw 'Window response smoke failed.' }
+            if ($process.HasExited -or -not $responsive) { throw 'Startup readiness smoke failed.' }
             Start-Sleep -Seconds 8
+            [UIntPtr]$response = [UIntPtr]::Zero
+            if ($process.HasExited -or [PackageWindow]::SendMessageTimeoutW($window, 0, [UIntPtr]::Zero, [IntPtr]::Zero, 3, 2000, [ref]$response) -eq [IntPtr]::Zero) { throw 'Window response smoke failed.' }
             if ($process.HasExited -or -not [PackageWindow]::PostMessageW($window, 0x0010, [UIntPtr]::Zero, [IntPtr]::Zero)) { throw 'Normal shutdown smoke failed.' }
             if (-not $process.WaitForExit(15000) -or $process.ExitCode -ne 0) { throw 'Normal shutdown smoke failed.' }
             # Do not print or upload process output, generated settings, or crash files.
