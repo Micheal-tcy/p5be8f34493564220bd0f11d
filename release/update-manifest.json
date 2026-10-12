@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "version": "0.1.0",
+  "build_number": 1,
+  "commit": "f2a310c59acb25557f8b60e6eccdc47c1dd1a8c4",
+  "tag": "build-1-f2a310c",
+  "asset": "maple-helper.exe",
+  "size": 62733312,
+  "sha256": "d380021c46929a616cb587856072717984fdd39985db84310d2f346328ce989e"
+}
