@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "version": "0.1.0",
-  "build_number": 26,
-  "commit": "71206f86e2ac4f440021246472df0a77d7233f33",
-  "tag": "build-26-71206f8",
+  "build_number": 27,
+  "commit": "70b29a061d3ceeab4a5c85b45ba9882ad7ff5182",
+  "tag": "build-27-70b29a0",
   "asset": "maple-helper.exe",
-  "size": 63630336,
-  "sha256": "c07f06a3851eb3520f8be26d6e163d76d40624ae0712201151dfa563882c3db3"
+  "size": 63628288,
+  "sha256": "756bc9666bfe2c8e95c8588bfbfabde35b5328e6e28529551a41ea1c720b9153"
 }
