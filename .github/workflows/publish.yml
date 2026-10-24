@@ -26,6 +26,7 @@ jobs:
     outputs:
       executable_hash: ${{ steps.validate.outputs.executable_hash }}
       manifest_hash: ${{ steps.validate.outputs.manifest_hash }}
+      notes_hash: ${{ steps.validate.outputs.notes_hash }}
     steps:
       - uses: actions/checkout@v5
         with:
@@ -37,7 +38,7 @@ jobs:
           Set-StrictMode -Version Latest
           $files = @(Get-ChildItem -LiteralPath release -Force)
           $names = @($files.Name | Sort-Object)
-          if ($files.Count -ne 2 -or ($names -join '|') -cne 'maple-helper.exe|update-manifest.json') { throw 'Unexpected package contents.' }
+          if ($files.Count -ne 3 -or ($names -join '|') -cne 'maple-helper.exe|update-manifest.json|update-notes.json') { throw 'Unexpected package contents.' }
           if (@($files | Where-Object { $_.PSIsContainer -or ($_.Attributes -band [IO.FileAttributes]::ReparsePoint) }).Count) { throw 'Package entries must be ordinary files.' }
           $exe = Get-Item -LiteralPath release/maple-helper.exe
           $json = Get-Item -LiteralPath release/update-manifest.json
@@ -61,6 +62,115 @@ jobs:
           if ($hash -cne $manifest.sha256) { throw 'Executable checksum mismatch.' }
           "executable_hash=$hash" >> $env:GITHUB_OUTPUT
           "manifest_hash=$((Get-FileHash -LiteralPath $json.FullName -Algorithm SHA256).Hash.ToLowerInvariant())" >> $env:GITHUB_OUTPUT
+          # BEGIN standalone update-notes validation
+          # Shared by cloud/local packaging and anonymous release verification. This file
+          # never copies the technical changelog or commit messages into the public package.
+          $script:MapleNotesMaxBytes = 128KB
+          $script:MapleNotesMaxEntries = 100
+
+          function Assert-MapleObjectKeys($Value, [string[]]$Keys, [string]$Label) {
+            if ($null -eq $Value -or $Value -isnot [pscustomobject]) { throw "$Label must be an object." }
+            $actual = @($Value.PSObject.Properties.Name)
+            if ($actual.Count -ne $Keys.Count) { throw "$Label has unexpected fields." }
+            foreach ($key in $Keys) { if ($actual -cnotcontains $key) { throw "$Label has a missing field." } }
+          }
+
+          function Test-MapleUnsigned($Value) {
+            return (($Value -is [int] -or $Value -is [long] -or $Value -is [uint64]) -and $Value -ge 0)
+          }
+
+          function Assert-MapleJsonElement($Element) {
+            if ($Element.ValueKind -eq [System.Text.Json.JsonValueKind]::Object) {
+              $names = [Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
+              foreach ($property in $Element.EnumerateObject()) {
+                if (!$names.Add($property.Name)) { throw 'JSON fields must not be duplicated.' }
+                Assert-MapleJsonElement $property.Value
+              }
+            } elseif ($Element.ValueKind -eq [System.Text.Json.JsonValueKind]::Array) {
+              foreach ($item in $Element.EnumerateArray()) { Assert-MapleJsonElement $item }
+            } elseif ($Element.ValueKind -eq [System.Text.Json.JsonValueKind]::String) {
+              # Force strict unescaping before ConvertFrom-Json can replace lone surrogates.
+              [void]$Element.GetString()
+            }
+          }
+
+          function Assert-MapleReleaseIdentity($Value) {
+            if (!(Test-MapleUnsigned $Value.build_number) -or $Value.build_number -eq 0 -or
+                $Value.commit -isnot [string] -or $Value.commit -cnotmatch '^[0-9a-f]{40}$' -or
+                $Value.tag -isnot [string] -or $Value.tag -cne "build-$($Value.build_number)-$($Value.commit.Substring(0, 7))") {
+              throw 'Release identity is invalid.'
+            }
+          }
+
+          function Read-MapleBoundedJson([string]$Path, [int]$MaxBytes) {
+            $file = Get-Item -LiteralPath $Path -ErrorAction Stop
+            if ($file.PSIsContainer -or $file.Length -lt 2 -or $file.Length -gt $MaxBytes) { throw 'JSON asset size is invalid.' }
+            try {
+              $utf8 = [Text.UTF8Encoding]::new($false, $true)
+              $text = $utf8.GetString([IO.File]::ReadAllBytes($file.FullName))
+              $options = [System.Text.Json.JsonDocumentOptions]::new()
+              $options.MaxDepth = 16
+              $document = [System.Text.Json.JsonDocument]::Parse($text, $options)
+              try { Assert-MapleJsonElement $document.RootElement } finally { $document.Dispose() }
+              return ,($text | ConvertFrom-Json -NoEnumerate -ErrorAction Stop)
+            } catch { throw 'JSON asset is invalid.' }
+          }
+
+          function Read-MapleReleaseManifest([string]$Path) {
+            $value = Read-MapleBoundedJson $Path 16KB
+            Assert-MapleObjectKeys $value @('schema', 'version', 'build_number', 'commit', 'tag', 'asset', 'size', 'sha256') 'Manifest'
+            Assert-MapleReleaseIdentity $value
+            if (!(Test-MapleUnsigned $value.schema) -or $value.schema -ne 1 -or
+                $value.version -isnot [string] -or $value.version -cnotmatch '^[0-9]+\.[0-9]+\.[0-9]+$' -or
+                $value.asset -cne 'maple-helper.exe' -or !(Test-MapleUnsigned $value.size) -or $value.size -lt 2 -or $value.size -ge 100MB -or
+                $value.sha256 -isnot [string] -or $value.sha256 -cnotmatch '^[0-9a-f]{64}$') { throw 'Manifest values are invalid.' }
+            return $value
+          }
+
+          function Assert-MapleNoteSummary($Summary) {
+            if ($Summary -isnot [array] -or $Summary.Count -lt 1 -or $Summary.Count -gt 3) { throw 'Each note needs one to three summary bullets.' }
+            foreach ($line in $Summary) {
+              if ($line -isnot [string] -or !$line.Length -or $line -cne $line.Trim() -or $line -match '[\p{Cc}<>\u2028\u2029]') { throw 'Summary must be nonempty plain text without surrounding whitespace.' }
+              # Count Unicode scalar values, matching Rust chars(), rather than UTF-16 units.
+              $length = [regex]::Matches($line, '[\uD800-\uDBFF][\uDC00-\uDFFF]|[\s\S]').Count
+              try { $bytes = [Text.UTF8Encoding]::new($false, $true).GetByteCount($line) } catch { throw 'Summary contains invalid Unicode.' }
+              if ($length -gt 180 -or $bytes -gt 720) { throw 'Summary is too long.' }
+            }
+          }
+
+          function Assert-MapleUpdateNotes($Notes, $Manifest) {
+            Assert-MapleObjectKeys $Notes @('schema', 'target', 'history_complete_after_build', 'entries') 'Update notes'
+            Assert-MapleObjectKeys $Notes.target @('build_number', 'commit', 'tag', 'exe_sha256') 'Notes target'
+            Assert-MapleReleaseIdentity $Notes.target
+            if (!(Test-MapleUnsigned $Notes.schema) -or $Notes.schema -ne 1 -or
+                !(Test-MapleUnsigned $Notes.history_complete_after_build) -or $Notes.history_complete_after_build -ge $Notes.target.build_number -or
+                $Notes.target.build_number -ne $Manifest.build_number -or $Notes.target.commit -cne $Manifest.commit -or
+                $Notes.target.tag -cne $Manifest.tag -or $Notes.target.exe_sha256 -cne $Manifest.sha256 -or
+                $Notes.entries -isnot [array] -or $Notes.entries.Count -gt $script:MapleNotesMaxEntries) { throw 'Update notes do not match the package or supported bounds.' }
+            $ids = [Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
+            $builds = @{}
+            foreach ($entry in $Notes.entries) {
+              Assert-MapleObjectKeys $entry @('note_id', 'build_number', 'commit', 'tag', 'summary') 'Note entry'
+              Assert-MapleReleaseIdentity $entry
+              if ($entry.note_id -isnot [string] -or $entry.note_id -cnotmatch '^[a-z0-9][a-z0-9-]{0,79}$' -or !$ids.Add($entry.note_id) -or
+                  $entry.build_number -gt $Notes.target.build_number) { throw 'Note ID or build is invalid or duplicated.' }
+              Assert-MapleNoteSummary $entry.summary
+              $build = [string]$entry.build_number
+              $identity = "$($entry.commit)/$($entry.tag)"
+              if ($builds.ContainsKey($build) -and $builds[$build] -cne $identity) { throw 'One build has conflicting note identities.' }
+              $builds[$build] = $identity
+              if ($entry.build_number -eq $Notes.target.build_number -and ($entry.commit -cne $Notes.target.commit -or $entry.tag -cne $Notes.target.tag)) { throw 'Target note identity conflicts with the package.' }
+            }
+          }
+
+          function Read-MapleUpdateNotes([string]$Path, $Manifest) {
+            $notes = Read-MapleBoundedJson $Path $script:MapleNotesMaxBytes
+            Assert-MapleUpdateNotes $notes $Manifest
+            return $notes
+          }
+          $notes = Read-MapleUpdateNotes release/update-notes.json $manifest
+          "notes_hash=$((Get-FileHash -LiteralPath release/update-notes.json -Algorithm SHA256).Hash.ToLowerInvariant())" >> $env:GITHUB_OUTPUT
+          # END standalone update-notes validation
 
       - name: Isolated startup and normal shutdown
         run: |
@@ -161,11 +271,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           EXPECTED_EXE_HASH: ${{ needs.verify.outputs.executable_hash }}
           EXPECTED_MANIFEST_HASH: ${{ needs.verify.outputs.manifest_hash }}
+          EXPECTED_NOTES_HASH: ${{ needs.verify.outputs.notes_hash }}
         run: |
           $ErrorActionPreference = 'Stop'
           Set-StrictMode -Version Latest
           $PSNativeCommandUseErrorActionPreference = $false
           if ((Get-FileHash -LiteralPath release/maple-helper.exe -Algorithm SHA256).Hash -ine $env:EXPECTED_EXE_HASH -or (Get-FileHash -LiteralPath release/update-manifest.json -Algorithm SHA256).Hash -ine $env:EXPECTED_MANIFEST_HASH) { throw 'Verified package identity changed.' }
+          if ((Get-FileHash -LiteralPath release/update-notes.json -Algorithm SHA256).Hash -ine $env:EXPECTED_NOTES_HASH) { throw 'Verified notes identity changed.' }
           $manifest = Get-Content -LiteralPath release/update-manifest.json -Raw | ConvertFrom-Json
           $listed = gh release list --repo $env:GITHUB_REPOSITORY --limit 100 --json tagName,isLatest,isDraft,isPrerelease 2>$null
           if ($LASTEXITCODE -ne 0) { throw 'Cannot inspect existing releases.' }
@@ -192,8 +304,13 @@ jobs:
           $remoteTag = git ls-remote --tags origin "refs/tags/$($manifest.tag)" 2>$null
           if ($LASTEXITCODE -ne 0 -or $remoteTag) { throw 'Cannot create a fresh package tag.' }
           $notes = Join-Path $env:RUNNER_TEMP 'package-release-notes.txt'
-          [IO.File]::WriteAllText($notes, "Windows package, build $($manifest.build_number). Checksums are included in the attached manifest.", [Text.UTF8Encoding]::new($false))
+          $updateNotes = Get-Content -LiteralPath release/update-notes.json -Raw | ConvertFrom-Json
+          $summary = @($updateNotes.entries | Where-Object build_number -EQ $manifest.build_number | ForEach-Object { $_.summary } | ForEach-Object { "- $_" })
+          $body = "Windows package, build $($manifest.build_number). Checksums are included in the attached manifest.`n`n" + ($summary -join "`n")
+          [IO.File]::WriteAllText($notes, $body, [Text.UTF8Encoding]::new($false))
           # GITHUB_SHA belongs to this public distribution repository, never the source build.
-          gh release create $manifest.tag release/maple-helper.exe release/update-manifest.json --repo $env:GITHUB_REPOSITORY --target $env:GITHUB_SHA --title "Build $($manifest.build_number)" --notes-file $notes $latestFlag 1>$null 2>$null
+          $versionParts = $manifest.version.Split('.')
+          $displayVersion = "v$($versionParts[0]).$($versionParts[1]).$($manifest.build_number)"
+          gh release create $manifest.tag release/maple-helper.exe release/update-manifest.json release/update-notes.json --repo $env:GITHUB_REPOSITORY --target $env:GITHUB_SHA --title $displayVersion --notes-file $notes $latestFlag 1>$null 2>$null
           if ($LASTEXITCODE -ne 0) { throw 'Release publication failed. Any existing or partial release is left untouched for review.' }
           Write-Host 'Package published.'

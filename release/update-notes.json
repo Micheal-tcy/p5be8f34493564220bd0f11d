@@ -1,0 +1,473 @@
+{
+  "schema": 1,
+  "target": {
+    "build_number": 48,
+    "commit": "b36009fbeb1e37017feb44ea90ee3e6d0cff501d",
+    "tag": "build-48-b36009f",
+    "exe_sha256": "45267b33bdb7073355835c855a6bfccb57655902cdd61f22c2de0f3c65040048"
+  },
+  "history_complete_after_build": 0,
+  "entries": [
+    {
+      "note_id": "history-build-1",
+      "build_number": 1,
+      "commit": "f2a310c59acb25557f8b60e6eccdc47c1dd1a8c4",
+      "tag": "build-1-f2a310c",
+      "summary": [
+        "整合多助手分页界面、助手前台快捷键与自动更新入口。",
+        "挂机启动后自动进入精简界面，地图框选保留手动视角。"
+      ]
+    },
+    {
+      "note_id": "history-build-2",
+      "build_number": 2,
+      "commit": "2f45c5b0c6a0e0bb7b407c67b7c3849d577a70a8",
+      "tag": "build-2-2f45c5b",
+      "summary": [
+        "完善安装包发布流程，使主干提交与对应程序更新配套。"
+      ]
+    },
+    {
+      "note_id": "history-build-3",
+      "build_number": 3,
+      "commit": "b20d1c8c4691e03ff16c5d198b4140a9c60e71a8",
+      "tag": "build-3-b20d1c8",
+      "summary": [
+        "更新检查和下载改用公开发布直链，避免匿名接口限流导致无法更新。"
+      ]
+    },
+    {
+      "note_id": "history-build-4",
+      "build_number": 4,
+      "commit": "1d71c5df05260f543454c09652d83b2072909141",
+      "tag": "build-4-1d71c5d",
+      "summary": [
+        "完善跨层跳跃、绳梯移动及巡逻选路，修复拾取和导航误停。",
+        "复杂地图复用已验证路线，减少重复规划。"
+      ]
+    },
+    {
+      "note_id": "history-build-5",
+      "build_number": 5,
+      "commit": "e8d4500f7b4cfeab28cf396e07b33b91b52f15a9",
+      "tag": "build-5-e8d4500",
+      "summary": [
+        "按启停快捷键时先保存地图范围与方案，再开始运行。"
+      ]
+    },
+    {
+      "note_id": "history-build-6",
+      "build_number": 6,
+      "commit": "54b6aea210b50c29ae74a537443be6c7466cce25",
+      "tag": "build-6-54b6aea",
+      "summary": [
+        "修复连通平台端点的回位误判，新增连续越界后回中心选项。",
+        "报警仅在策略成功运行后触发，停止后保留已触发报警的消音倒计时。"
+      ]
+    },
+    {
+      "note_id": "history-build-7",
+      "build_number": 7,
+      "commit": "ca667e0b468be803c63d90bd80566e1dba7a4c24",
+      "tag": "build-7-ca667e0",
+      "summary": [
+        "区分金色闪光、白名单与普通掉落提醒，改进语音和地图标记。",
+        "地图识别并区分未激活的 Boss。"
+      ]
+    },
+    {
+      "note_id": "history-build-8",
+      "build_number": 8,
+      "commit": "1951a4ffa5fcfdc990f5df4f7be4c7ad2f6c2bda",
+      "tag": "build-8-1951a4f",
+      "summary": [
+        "适配新版客户端的宠物跟随改动，恢复移动读取并保留玩家移动边界。"
+      ]
+    },
+    {
+      "note_id": "history-build-9",
+      "build_number": 9,
+      "commit": "e4f797db335dd9234239f2085ca3e4664cab841f",
+      "tag": "build-9-e4f797d",
+      "summary": [
+        "大地图导航分步计算并复用规划结果，减少脚本超时和重复等待。"
+      ]
+    },
+    {
+      "note_id": "history-build-10",
+      "build_number": 10,
+      "commit": "7f06b8f28a7ac84dc052b0d9deacbe37860e5bd3",
+      "tag": "build-10-7f06b8f",
+      "summary": [
+        "安装包默认由云端构建发布，同时保留本机打包方式。"
+      ]
+    },
+    {
+      "note_id": "history-build-11",
+      "build_number": 11,
+      "commit": "7fa9948cd02e3257f37d3ddd9987af7654fce165",
+      "tag": "build-11-7fa9948",
+      "summary": [
+        "兼容新版客户端步行布局，恢复移动物理读取。"
+      ]
+    },
+    {
+      "note_id": "history-build-12",
+      "build_number": 12,
+      "commit": "b8f976ab86bbb3cc0cdd62aa596148d696e824ba",
+      "tag": "build-12-b8f976a",
+      "summary": [
+        "按地图保存手动缩放和位置，返回地图或重启后恢复视角。"
+      ]
+    },
+    {
+      "note_id": "history-build-13",
+      "build_number": 13,
+      "commit": "7b3706c96bb3da623cb45db61f4d6450ba3036ac",
+      "tag": "build-13-7b3706c",
+      "summary": [
+        "修复客户端更新后移动物理不可用的问题。"
+      ]
+    },
+    {
+      "note_id": "history-build-14",
+      "build_number": 14,
+      "commit": "e512c193889a94141efb73bb2b398f18cc6b917d",
+      "tag": "build-14-e512c19",
+      "summary": [
+        "没有手动记录的新地图默认使用全图移动范围，保留已有自定义范围。",
+        "统一金色掉落图标尺寸。"
+      ]
+    },
+    {
+      "note_id": "history-build-16",
+      "build_number": 16,
+      "commit": "6189b3061f356a55f2057b1326a084888b860f22",
+      "tag": "build-16-6189b30",
+      "summary": [
+        "适配十月十六日客户端更新，恢复移动物理读取。",
+        "调整构建发布流程，避免在云端重复执行本地回归。"
+      ]
+    },
+    {
+      "note_id": "history-build-17",
+      "build_number": 17,
+      "commit": "4450bb2ff11633565a47d392217e54f1619ee0e0",
+      "tag": "build-17-4450bb2",
+      "summary": [
+        "新增挂机监控布局，可同时查看运行信息、日志与地图。",
+        "按助手保存布局及日志跟随偏好。"
+      ]
+    },
+    {
+      "note_id": "history-build-18",
+      "build_number": 18,
+      "commit": "4c943863789bdb726da42553745701c1cbb7dfbd",
+      "tag": "build-18-4c94386",
+      "summary": [
+        "适配新版移动物理，改善贴地抓梯、绳梯定位与跨层衔接。",
+        "装备和卷轴拾取遇到短暂位移干扰后可有限恢复，复杂地图支持更多地形。"
+      ]
+    },
+    {
+      "note_id": "history-build-19",
+      "build_number": 19,
+      "commit": "b76524bfdec394e4795cbe91d68c676825066285",
+      "tag": "build-19-b76524b",
+      "summary": [
+        "适配十月十七日客户端的步行与宠物跟随布局，恢复移动读取。"
+      ]
+    },
+    {
+      "note_id": "history-build-20",
+      "build_number": 20,
+      "commit": "457ab8efc685f1c01e54611526bb2ba966ff6677",
+      "tag": "build-20-457ab8e",
+      "summary": [
+        "修复连续起伏地形接缝处误判离开路线，减少移动反复启停。"
+      ]
+    },
+    {
+      "note_id": "history-build-21",
+      "build_number": 21,
+      "commit": "029d9fb98161ba9c119bd98ae606f7901c01f068",
+      "tag": "build-21-029d9fb",
+      "summary": [
+        "每条技能的攻击范围显示开关随策略保存，切换或重启后保留。"
+      ]
+    },
+    {
+      "note_id": "history-build-22",
+      "build_number": 22,
+      "commit": "4d4b1654c4287962198e8a55d4ff459cd5debc99",
+      "tag": "build-22-4d4b165",
+      "summary": [
+        "更新下载采用 Windows 系统代理，显示下载进度、阶段和超时状态。"
+      ]
+    },
+    {
+      "note_id": "history-build-23",
+      "build_number": 23,
+      "commit": "9664883788538a31c9ed50974719b73c7be63fc8",
+      "tag": "build-23-9664883",
+      "summary": [
+        "攻击白名单按地图保存，新地图自动载入默认怪物。",
+        "新增全图持续无新增怪物报警。"
+      ]
+    },
+    {
+      "note_id": "history-build-24",
+      "build_number": 24,
+      "commit": "d4fcaf61c6a243303260ef9dda5f1bfd101d1e11",
+      "tag": "build-24-d4fcaf6",
+      "summary": [
+        "地图默认白名单补齐怪物死亡分裂、复活和转换后的形态。"
+      ]
+    },
+    {
+      "note_id": "history-build-25",
+      "build_number": 25,
+      "commit": "cebe51a4d4c53643f95d4666d5a255c47237d67c",
+      "tag": "build-25-cebe51a",
+      "summary": [
+        "改善前台切换并增加切换失败提醒，无关键位冲突不再阻止可用技能。",
+        "修复部分重叠短平台无法归位的问题。"
+      ]
+    },
+    {
+      "note_id": "history-build-26",
+      "build_number": 26,
+      "commit": "71206f86e2ac4f440021246472df0a77d7233f33",
+      "tag": "build-26-71206f8",
+      "summary": [
+        "地图可显示其他玩家的职业和等级，并保存显示开关。",
+        "对明显异常的等级标为未取得，保留可信职业信息。"
+      ]
+    },
+    {
+      "note_id": "history-build-27",
+      "build_number": 27,
+      "commit": "70b29a061d3ceeab4a5c85b45ba9882ad7ff5182",
+      "tag": "build-27-70b29a0",
+      "summary": [
+        "适配新版客户端步行布局，改善共享目录保存及前后台输入衔接。"
+      ]
+    },
+    {
+      "note_id": "history-build-28",
+      "build_number": 28,
+      "commit": "23435807cee93287380861d23f06b8175b502600",
+      "tag": "build-28-2343580",
+      "summary": [
+        "修复无关按键残留导致启停快捷键无法触发的问题。",
+        "适配十月十九日晚版客户端步行布局。"
+      ]
+    },
+    {
+      "note_id": "history-build-29",
+      "build_number": 29,
+      "commit": "23435807cee93287380861d23f06b8175b502600",
+      "tag": "build-29-2343580",
+      "summary": [
+        "与构建 28 使用相同源码，重新打包发布。"
+      ]
+    },
+    {
+      "note_id": "history-build-30",
+      "build_number": 30,
+      "commit": "25e6ee4d07432d917587eb22afab61067f7de925",
+      "tag": "build-30-25e6ee4",
+      "summary": [
+        "完善台阶和绳梯导航，新增平台停留超时后换层选项。",
+        "增加复用现有配置的本地源码启动入口。"
+      ]
+    },
+    {
+      "note_id": "history-build-31",
+      "build_number": 31,
+      "commit": "d414a41f1ca075d3cb273ddc5b221aeddc4efa6d",
+      "tag": "build-31-d414a41",
+      "summary": [
+        "地图导航支持预烘焙和持久缓存，减少启动和恢复时重复准备。",
+        "改善跨层选路与本地源码更新流程。"
+      ]
+    },
+    {
+      "note_id": "history-build-32",
+      "build_number": 32,
+      "commit": "e240f1d1552f8151355c504edacf4ed7afb2c4d3",
+      "tag": "build-32-e240f1d",
+      "summary": [
+        "增益识别可单独选择自身图标来源，增加分身术近距离跳攻选项。",
+        "整合新增导航功能，同时保留现有移动保护和缓存。"
+      ]
+    },
+    {
+      "note_id": "history-build-33",
+      "build_number": 33,
+      "commit": "5d08385519e858f223b803529518717cb5fec6c9",
+      "tag": "build-33-5d08385",
+      "summary": [
+        "改善连续移动、落地后衔接和绳梯对位，增加受阻后的有限恢复。",
+        "跨层移动与自动拾取统一遵守配置范围。"
+      ]
+    },
+    {
+      "note_id": "history-build-34",
+      "build_number": 34,
+      "commit": "09072c12f6bd25ac0edbfd891c9117e0736a2dd2",
+      "tag": "build-34-09072c1",
+      "summary": [
+        "兼容新版客户端移动模块，名称读取失败不再阻断地图地形显示。"
+      ]
+    },
+    {
+      "note_id": "history-build-35",
+      "build_number": 35,
+      "commit": "317eedff9d633bc11a896de4625fc4f95d064e8e",
+      "tag": "build-35-317eedf",
+      "summary": [
+        "恢复新版客户端中的地图、怪物、掉落及消耗品名称显示。",
+        "减少本地源码启动和更新后的重复编译等待。"
+      ]
+    },
+    {
+      "note_id": "history-build-36",
+      "build_number": 36,
+      "commit": "cf77dbf3f70a45ca1e314fef4debcbdc27397a53",
+      "tag": "build-36-cf77dbf",
+      "summary": [
+        "修复轻功默认增益图标识别，保留用户显式设置。",
+        "本地源码启动显示检查和编译进度。"
+      ]
+    },
+    {
+      "note_id": "history-build-37",
+      "build_number": 37,
+      "commit": "01695ff7ee615971edd7280fbdce9ffd8af52446",
+      "tag": "build-37-01695ff",
+      "summary": [
+        "新增新怪观察等待开关，默认关闭并随策略保存。"
+      ]
+    },
+    {
+      "note_id": "history-build-38",
+      "build_number": 38,
+      "commit": "22442f3703a924a944898932c5a05752919f29ff",
+      "tag": "build-38-22442f3",
+      "summary": [
+        "改善跨层选路与悬空绳抓取，按怪物数量和路线耗时选择平台。",
+        "减少巡逻立即往返及抓绳失败后的重复尝试。"
+      ]
+    },
+    {
+      "note_id": "history-build-39",
+      "build_number": 39,
+      "commit": "baee1e0028901c17867aacc5863e23eca1b01cec",
+      "tag": "build-39-baee1e0",
+      "summary": [
+        "补全攻击药丸和龙血的自动补充说明与回归验证，沿用原有通用药剂入口。"
+      ]
+    },
+    {
+      "note_id": "history-build-40",
+      "build_number": 40,
+      "commit": "9a5a0859777d8357c4e4c4a3435aba79e33d15e9",
+      "tag": "build-40-9a5a085",
+      "summary": [
+        "恢复新版地图的怪物列表、底图和默认全图移动范围。",
+        "修复绳底归轴时错误判定转场越界而停止的问题。"
+      ]
+    },
+    {
+      "note_id": "history-build-41",
+      "build_number": 41,
+      "commit": "546ef4f585d7e1868c9a343b47a52a198f60368e",
+      "tag": "build-41-546ef4f",
+      "summary": [
+        "补齐船长一至三转攻击与增益技能，支持导航标记和召唤维护。",
+        "可用枪系技能支持经过近身条件验证的跳射。"
+      ]
+    },
+    {
+      "note_id": "history-build-42",
+      "build_number": 42,
+      "commit": "65ef7df0c9690373e6f00d4c279a9e37cd680685",
+      "tag": "build-42-65ef7df",
+      "summary": [
+        "角色靠近移动范围边缘时，可用的原地攻击不再被贴边撤离反复打断。"
+      ]
+    },
+    {
+      "note_id": "history-build-43",
+      "build_number": 43,
+      "commit": "bd530f6433db36982b06c18c27031ded126b7983",
+      "tag": "build-43-bd530f6",
+      "summary": [
+        "适配十月二十三日客户端更新，恢复移动、增益和地图数据读取。",
+        "修复部分地图传送点数据导致整张地图地形无法载入的问题。"
+      ]
+    },
+    {
+      "note_id": "history-build-44",
+      "build_number": 44,
+      "commit": "f1a8454dc6703ed1ef6a107c33d2b03f75b762fd",
+      "tag": "build-44-f1a8454",
+      "summary": [
+        "支持配置游戏攻击宏并按成员顺序确认施放。",
+        "恢复技能名称，补齐多职业攻击及落叶斩的移动攻击条件。"
+      ]
+    },
+    {
+      "note_id": "history-build-45",
+      "build_number": 45,
+      "commit": "e313dd321f8827a9e077b4e5bb985a0fea5b22c6",
+      "tag": "build-45-e313dd3",
+      "summary": [
+        "新怪观察等待支持随机时间上下限。",
+        "挂机监控可切换攻击和增益方案，以及运行日志和掉落日志。"
+      ]
+    },
+    {
+      "note_id": "history-build-46",
+      "build_number": 46,
+      "commit": "ed9a691b10f77ff2165f779a69a09bdec201cc3a",
+      "tag": "build-46-ed9a691",
+      "summary": [
+        "修复普通刷怪、怪物消失和空挥反复重置无伤害施放计时的问题。"
+      ]
+    },
+    {
+      "note_id": "history-build-47",
+      "build_number": 47,
+      "commit": "e8bc29c0d5958936182061ef24e975ae8f40c2ca",
+      "tag": "build-47-e8bc29c",
+      "summary": [
+        "不再为群攻规划圈外站位，合法站位只能打到一只时优先可用单体。",
+        "日志新增独立报警记录页，脚本超时等异常停机也会触发报警。"
+      ]
+    },
+    {
+      "note_id": "update-history-overview-20261024",
+      "build_number": 48,
+      "commit": "b36009fbeb1e37017feb44ea90ee3e6d0cff501d",
+      "tag": "build-48-b36009f",
+      "summary": [
+        "更新面板增加历史更新概览，可按版本查看构建 1～47 中 46 个真实发布版本的简要更新内容。",
+        "源码和本地版本也可离线浏览正式历史，尚未发布的本地改动单独显示。",
+        "更新说明未发布、网络失败和校验失败分别提示，可独立重试说明，不打断下载或安装准备。"
+      ]
+    },
+    {
+      "note_id": "updater-resume-notes-20261024",
+      "build_number": 48,
+      "commit": "b36009fbeb1e37017feb44ea90ee3e6d0cff501d",
+      "tag": "build-48-b36009f",
+      "summary": [
+        "正式版本号随每次构建递增；独立更新面板集中显示进度、速度和预计剩余时间。",
+        "下载支持暂停、断网重连和退出后继续，弱网中断保留已下载内容，校验完成后再安装重启。",
+        "更新面板直接展示本次及跨版本更新简述，说明从每次提交的 changelog 自动生成。"
+      ]
+    }
+  ]
+}
