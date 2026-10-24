@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 50,
-    "commit": "e5a46971329b8ceeb6b588e5fb8c9ba656fe9234",
-    "tag": "build-50-e5a4697",
-    "exe_sha256": "7703405cdd5d095efb696c60ed2b6ca0d7aa6f20efd4ca08e1076ce5456291f1"
+    "build_number": 51,
+    "commit": "02e5e01893634f214fd8981687b6cf39735ae6fb",
+    "tag": "build-51-02e5e01",
+    "exe_sha256": "0bb1fd7fae8afa80fbe7512bb332b14b9c43f98d3ceed8de1c88b0002815fe1f"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -487,6 +487,16 @@
         "新增“聊天提醒”开关，可为其他玩家的所有人频道新消息显示系统提示，自动排除自身发言。",
         "所有人与组队聊天支持分别保存日志，包含自身发言；日志与提醒可独立开关，设置自动保存。",
         "初次连接不回放旧消息，关闭提醒或切换角色会清除待发提示；聊天不播放掉落语音，也不会被金色掉落清除。"
+      ]
+    },
+    {
+      "note_id": "bow-terrain-targeting-20261024",
+      "build_number": 51,
+      "commit": "02e5e01893634f214fd8981687b6cf39735ae6fb",
+      "tag": "build-51-02e5e01",
+      "summary": [
+        "修复箭扫射/四连射只按射程矩形判断、隔着起伏地面连续空放后触发不掉血报警的问题；遇到遮挡时先在允许范围内寻找可射击站位。",
+        "恢复对较高平台及移动范围外、但可从范围内真实选中的目标判断。保留攻击连续持键和 100ms 重复间隔，不增加施放等待。"
       ]
     }
   ]
