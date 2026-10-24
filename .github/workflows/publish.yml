@@ -40,6 +40,16 @@ jobs:
           $names = @($files.Name | Sort-Object)
           if ($files.Count -ne 3 -or ($names -join '|') -cne 'maple-helper.exe|update-manifest.json|update-notes.json') { throw 'Unexpected package contents.' }
           if (@($files | Where-Object { $_.PSIsContainer -or ($_.Attributes -band [IO.FileAttributes]::ReparsePoint) }).Count) { throw 'Package entries must be ordinary files.' }
+          # BEGIN immutable release bytes validation
+          foreach ($path in @('release/maple-helper.exe', 'release/update-manifest.json', 'release/update-notes.json')) {
+            $attribute = @(& git check-attr --cached text -- $path)
+            if ($LASTEXITCODE -ne 0 -or $attribute.Count -ne 1 -or $attribute[0] -cne "${path}: text: unset") { throw "Release asset lacks -text protection: $path" }
+            $raw = & git hash-object --no-filters -- $path
+            if ($LASTEXITCODE -ne 0) { throw "Cannot hash raw release asset: $path" }
+            $committed = & git rev-parse --verify ":$path"
+            if ($LASTEXITCODE -ne 0 -or $raw -cne $committed) { throw "Git checkout changed release bytes: $path" }
+          }
+          # END immutable release bytes validation
           $exe = Get-Item -LiteralPath release/maple-helper.exe
           $json = Get-Item -LiteralPath release/update-manifest.json
           if ($exe.Length -lt 2 -or $exe.Length -ge 100MB -or $json.Length -lt 2 -or $json.Length -gt 16KB) { throw 'Package size is outside its allowed range.' }

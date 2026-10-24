@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 48,
-    "commit": "b36009fbeb1e37017feb44ea90ee3e6d0cff501d",
-    "tag": "build-48-b36009f",
-    "exe_sha256": "45267b33bdb7073355835c855a6bfccb57655902cdd61f22c2de0f3c65040048"
+    "build_number": 49,
+    "commit": "4b5c5c8864350769086a6f8cec9c3ace3f133c81",
+    "tag": "build-49-4b5c5c8",
+    "exe_sha256": "dae54ca2c208396a6756f3d60bf8fa0a0973290e3e0c844205df0f0cbc839cfb"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -467,6 +467,15 @@
         "正式版本号随每次构建递增；独立更新面板集中显示进度、速度和预计剩余时间。",
         "下载支持暂停、断网重连和退出后继续，弱网中断保留已下载内容，校验完成后再安装重启。",
         "更新面板直接展示本次及跨版本更新简述，说明从每次提交的 changelog 自动生成。"
+      ]
+    },
+    {
+      "note_id": "release-payload-eol-20261024",
+      "build_number": 49,
+      "commit": "4b5c5c8864350769086a6f8cec9c3ace3f133c81",
+      "tag": "build-49-4b5c5c8",
+      "summary": [
+        "修复发布过程中更新说明行尾被 Git 转换、导致最终哈希校验失败的问题；保留完整的原始文件校验。"
       ]
     }
   ]

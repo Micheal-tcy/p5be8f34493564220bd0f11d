@@ -1,0 +1,6 @@
+# BEGIN maple-helper release asset bytes
+# Release payloads are immutable bytes; preserve the producer's exact SHA-256.
+release/maple-helper.exe -text
+release/update-manifest.json -text
+release/update-notes.json -text
+# END maple-helper release asset bytes
