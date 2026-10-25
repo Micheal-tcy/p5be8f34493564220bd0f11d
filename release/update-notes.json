@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 51,
-    "commit": "02e5e01893634f214fd8981687b6cf39735ae6fb",
-    "tag": "build-51-02e5e01",
-    "exe_sha256": "0bb1fd7fae8afa80fbe7512bb332b14b9c43f98d3ceed8de1c88b0002815fe1f"
+    "build_number": 58,
+    "commit": "752a9d0a782184c1f60685b4f4d7c59804c1c644",
+    "tag": "build-58-752a9d0",
+    "exe_sha256": "e6da47d047105ca101c3ad141251c8120dd0d5f4670295a55d10ec8f4a427682"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -497,6 +497,17 @@
       "summary": [
         "修复箭扫射/四连射只按射程矩形判断、隔着起伏地面连续空放后触发不掉血报警的问题；遇到遮挡时先在允许范围内寻找可射击站位。",
         "恢复对较高平台及移动范围外、但可从范围内真实选中的目标判断。保留攻击连续持键和 100ms 重复间隔，不增加施放等待。"
+      ]
+    },
+    {
+      "note_id": "fullscreen-chat-positioning-map-range-20261026",
+      "build_number": 58,
+      "commit": "752a9d0a782184c1f60685b4f4d7c59804c1c644",
+      "tag": "build-58-752a9d0",
+      "summary": [
+        "聊天新增可选全屏优先横幅与 Windows 系统通知短音，连续消息即时合并；运行日志和挂机监控可切换查看聊天记录。",
+        "群攻技能可优先短距离调整站位，途中能攻击多个目标时立即出手；地图移动范围支持按地图共用或随攻击策略分别保存。",
+        "修复聊天旧摘要被丢弃、部分掉落声音提交失败不重试的问题，并补齐更新说明以恢复新版安装包发布。"
       ]
     }
   ]
