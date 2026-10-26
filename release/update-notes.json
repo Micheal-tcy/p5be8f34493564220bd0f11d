@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 58,
-    "commit": "752a9d0a782184c1f60685b4f4d7c59804c1c644",
-    "tag": "build-58-752a9d0",
-    "exe_sha256": "e6da47d047105ca101c3ad141251c8120dd0d5f4670295a55d10ec8f4a427682"
+    "build_number": 59,
+    "commit": "ac551e91076ba90d175e7355ee123f1c67608cfc",
+    "tag": "build-59-ac551e9",
+    "exe_sha256": "bbc49fda832198ed6ce411098cd5d151bee40385f0ce248c7cbca5b393c8349d"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -508,6 +508,16 @@
         "聊天新增可选全屏优先横幅与 Windows 系统通知短音，连续消息即时合并；运行日志和挂机监控可切换查看聊天记录。",
         "群攻技能可优先短距离调整站位，途中能攻击多个目标时立即出手；地图移动范围支持按地图共用或随攻击策略分别保存。",
         "修复聊天旧摘要被丢弃、部分掉落声音提交失败不重试的问题，并补齐更新说明以恢复新版安装包发布。"
+      ]
+    },
+    {
+      "note_id": "manual-runtime-expedition-20261026",
+      "build_number": 59,
+      "commit": "ac551e91076ba90d175e7355ee123f1c67608cfc",
+      "tag": "build-59-ac551e9",
+      "summary": [
+        "新增“远征模式”：每次开始挂机默认关闭，运行后可手动开启，临时忽略攻击白名单及战斗异常报警。",
+        "狩猎验证、巡查、地图广播和运行安全保护继续生效；关闭模式恢复原设置，停止或重新挂机不会继承。"
       ]
     }
   ]
