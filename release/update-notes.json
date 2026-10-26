@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 59,
-    "commit": "ac551e91076ba90d175e7355ee123f1c67608cfc",
-    "tag": "build-59-ac551e9",
-    "exe_sha256": "bbc49fda832198ed6ce411098cd5d151bee40385f0ce248c7cbca5b393c8349d"
+    "build_number": 60,
+    "commit": "89c1f3b6e7e61d847c62df37bd9c52926232f99e",
+    "tag": "build-60-89c1f3b",
+    "exe_sha256": "8d79a5a75125653f96c82240235e6b4782093e2010131d8c511af22eace91b85"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -518,6 +518,16 @@
       "summary": [
         "新增“远征模式”：每次开始挂机默认关闭，运行后可手动开启，临时忽略攻击白名单及战斗异常报警。",
         "狩猎验证、巡查、地图广播和运行安全保护继续生效；关闭模式恢复原设置，停止或重新挂机不会继承。"
+      ]
+    },
+    {
+      "note_id": "buster-depth-expedition-priority-20261026",
+      "build_number": 60,
+      "commit": "89c1f3b6e7e61d847c62df37bd9c52926232f99e",
+      "tag": "build-60-89c1f3b",
+      "summary": [
+        "枪连击新增专属进范围深度百分比，深入后才起手，持续攻击保留完整射程，减少卡边和反复短移。",
+        "远征模式旁新增优先锁定下拉框，也可在地图点选怪物设为优先目标；死亡、离场或开始新一轮后清除。"
       ]
     }
   ]
