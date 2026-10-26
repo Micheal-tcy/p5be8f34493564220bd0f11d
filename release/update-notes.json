@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 60,
-    "commit": "89c1f3b6e7e61d847c62df37bd9c52926232f99e",
-    "tag": "build-60-89c1f3b",
-    "exe_sha256": "8d79a5a75125653f96c82240235e6b4782093e2010131d8c511af22eace91b85"
+    "build_number": 61,
+    "commit": "339e619dda661e0ce12f2b9e500199d695dc4052",
+    "tag": "build-61-339e619",
+    "exe_sha256": "ed1ff3235511a9ff87c1b078a60e8dc14f3e89d1de5321c5cc7adb4d3b7b04b7"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -528,6 +528,26 @@
       "summary": [
         "枪连击新增专属进范围深度百分比，深入后才起手，持续攻击保留完整射程，减少卡边和反复短移。",
         "远征模式旁新增优先锁定下拉框，也可在地图点选怪物设为优先目标；死亡、离场或开始新一轮后清除。"
+      ]
+    },
+    {
+      "note_id": "puppet-buff-facing-20261026",
+      "build_number": 61,
+      "commit": "339e619dda661e0ce12f2b9e500199d695dc4052",
+      "tag": "build-61-339e619",
+      "summary": [
+        "弓手和弩手替身术支持单独加入技能优先级，只有自身替身 Buff 实际消失后才补放，效果仍存在时不重复释放。",
+        "增加默认关闭的“转身释放”，随策略保存；默认朝攻击方向释放，勾选后先确认转身再施放。"
+      ]
+    },
+    {
+      "note_id": "silver-hawk-auto-buff-20261027",
+      "build_number": 61,
+      "commit": "339e619dda661e0ce12f2b9e500199d695dc4052",
+      "tag": "build-61-339e619",
+      "summary": [
+        "自动 Buff 支持单独添加银鹰召唤，只有对应效果实际消失后才补放，存在期间不提前刷新。",
+        "召唤前读取真实等级、蓝量、前置技能和召唤石数量，条件不足时提示等待。"
       ]
     }
   ]
