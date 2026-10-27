@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 64,
-    "commit": "fa2fca87ffa01319f20ae926d9b156d0b1c4f994",
-    "tag": "build-64-fa2fca8",
-    "exe_sha256": "b2c08cbaf05e28118f89a9b11667995f0004cec80b20ca7f4f765eef6c44cd81"
+    "build_number": 65,
+    "commit": "5b81e6c4cd1e6eb2758e156d21a9fc7225338d00",
+    "tag": "build-65-5b81e6c",
+    "exe_sha256": "a9d72cb3a1949c1e7e537e3ced71d95a3410c980b6ecd1eb44d0dd72b03000cc"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -577,6 +577,16 @@
       "tag": "build-64-fa2fca8",
       "summary": [
         "修复箭扫射和落叶斩因客户端编译时间戳变化，被误判为尚未兼容、无法开始挂机的问题。"
+      ]
+    },
+    {
+      "note_id": "all-job-client-compatibility-20261027-evening",
+      "build_number": 65,
+      "commit": "5b81e6c4cd1e6eb2758e156d21a9fc7225338d00",
+      "tag": "build-65-5b81e6c",
+      "summary": [
+        "修复客户端再次更新后技能名称、攻击技能列表和宏成员名称无法加载的问题。",
+        "适配新版 Buff 图标和掉落特效读取，保留既有角色配置与技能方案。"
       ]
     }
   ]
