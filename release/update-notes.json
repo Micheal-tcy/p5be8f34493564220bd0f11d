@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 62,
-    "commit": "9321bfa6bf462a90dded0b072da2d997831d8df8",
-    "tag": "build-62-9321bfa",
-    "exe_sha256": "6f97dc720d2b0dc3bd23614fa15946049283b09e34b67e16e64fcfa4c9a6d9da"
+    "build_number": 63,
+    "commit": "4d8f04facb8a62efd45928f163780c380ed9c74c",
+    "tag": "build-63-4d8f04f",
+    "exe_sha256": "5bafc42cdfffb723a2cf696be835b06b1777108df0b0bb7b402ca246b4556876"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -558,6 +558,16 @@
       "summary": [
         "适配新版客户端的地图资源与移动读取，补充新版地图物件的加载支持。",
         "修复客户端更新后 Buff 图标、掉落特效、落叶斩和弓系目标判断的兼容问题。"
+      ]
+    },
+    {
+      "note_id": "combat-edge-chase-20261027",
+      "build_number": 63,
+      "commit": "4d8f04facb8a62efd45928f163780c380ed9c74c",
+      "tag": "build-63-4d8f04f",
+      "summary": [
+        "修复追怪到移动边缘后反复向内撤离、又向外追怪造成的左右摇摆。",
+        "追怪选点提前预留实时速度对应的停步距离，撤离后不会再次追向无法安全到达的站位；当前位置已经能攻击或治疗时继续施放。"
       ]
     }
   ]
