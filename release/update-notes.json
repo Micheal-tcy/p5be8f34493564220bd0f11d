@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 63,
-    "commit": "4d8f04facb8a62efd45928f163780c380ed9c74c",
-    "tag": "build-63-4d8f04f",
-    "exe_sha256": "5bafc42cdfffb723a2cf696be835b06b1777108df0b0bb7b402ca246b4556876"
+    "build_number": 64,
+    "commit": "fa2fca87ffa01319f20ae926d9b156d0b1c4f994",
+    "tag": "build-64-fa2fca8",
+    "exe_sha256": "b2c08cbaf05e28118f89a9b11667995f0004cec80b20ca7f4f765eef6c44cd81"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -568,6 +568,15 @@
       "summary": [
         "修复追怪到移动边缘后反复向内撤离、又向外追怪造成的左右摇摆。",
         "追怪选点提前预留实时速度对应的停步距离，撤离后不会再次追向无法安全到达的站位；当前位置已经能攻击或治疗时继续施放。"
+      ]
+    },
+    {
+      "note_id": "combat-pe-timestamp-20261027",
+      "build_number": 64,
+      "commit": "fa2fca87ffa01319f20ae926d9b156d0b1c4f994",
+      "tag": "build-64-fa2fca8",
+      "summary": [
+        "修复箭扫射和落叶斩因客户端编译时间戳变化，被误判为尚未兼容、无法开始挂机的问题。"
       ]
     }
   ]
