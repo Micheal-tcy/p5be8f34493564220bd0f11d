@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 68,
-    "commit": "20a02df2fc16f4a34a729b5cff73cf9f1c32ec13",
-    "tag": "build-68-20a02df",
-    "exe_sha256": "a50406df5cee54721a294df3a2f24cb54399862803186270dfb35c7c5c264e1c"
+    "build_number": 69,
+    "commit": "8490912d58333b860f386e1fdc28f84a12e7941a",
+    "tag": "build-69-8490912",
+    "exe_sha256": "acf07b99eb09aad6c2f3f83794fa277bb1c47d35a1bc7187db50a6896565b939"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -618,6 +618,16 @@
       "summary": [
         "地图、技能和怪物名称、玩家移动增加受限自动适配，减少客户端仅调整已知代码位置时的重复更新。",
         "保留完整校验；无法确认的代码或数据变化仍会提示不兼容。"
+      ]
+    },
+    {
+      "note_id": "adaptive-buff-drop-attack-20261028",
+      "build_number": 69,
+      "commit": "8490912d58333b860f386e1fdc28f84a12e7941a",
+      "tag": "build-69-8490912",
+      "summary": [
+        "Buff 图标、掉落特效、落叶斩和弓弩选敌接入受限自动适配，减少客户端仅调整已知代码位置时的重复修复。",
+        "保留旧版本支持和完整校验；代码逻辑或数据结构发生无法确认的变化时，仍提示不兼容。"
       ]
     }
   ]
