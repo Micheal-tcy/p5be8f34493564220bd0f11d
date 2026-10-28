@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 69,
-    "commit": "8490912d58333b860f386e1fdc28f84a12e7941a",
-    "tag": "build-69-8490912",
-    "exe_sha256": "acf07b99eb09aad6c2f3f83794fa277bb1c47d35a1bc7187db50a6896565b939"
+    "build_number": 70,
+    "commit": "75d540482f843cbea358074ee65cd2ac590a0bd1",
+    "tag": "build-70-75d5404",
+    "exe_sha256": "a826a1a7f9c0e8ddd58ff7e6a6f719530388f3001db30471fbc6244dac4ec1eb"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -628,6 +628,17 @@
       "summary": [
         "Buff 图标、掉落特效、落叶斩和弓弩选敌接入受限自动适配，减少客户端仅调整已知代码位置时的重复修复。",
         "保留旧版本支持和完整校验；代码逻辑或数据结构发生无法确认的变化时，仍提示不兼容。"
+      ]
+    },
+    {
+      "note_id": "expanded-combat-skills-20261028",
+      "build_number": 70,
+      "commit": "75d540482f843cbea358074ee65cd2ac590a0bd1",
+      "tag": "build-70-75d5404",
+      "summary": [
+        "修复属性攻击的范围识别，并新增支持 41 项非战神攻击技能，覆盖部分近战、法术、弓弩、飞镖及能量、变身攻击。",
+        "末日烈焰会等待最终施法动作结束，再恢复移动和 Buff；特殊条件失效时停止攻击，避免重复按键或打断。",
+        "本次仍非全技能覆盖；蓄力、持续攻击、链式攻击及部分召唤等功能尚未完成。"
       ]
     }
   ]
