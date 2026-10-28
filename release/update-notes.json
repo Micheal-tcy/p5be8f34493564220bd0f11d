@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 66,
-    "commit": "06b9cc00068635c466552084ca3ef943e6190e45",
-    "tag": "build-66-06b9cc0",
-    "exe_sha256": "c849c7ce398db4c6638d7a87b0480e3effbbcb6ac554e114f20cdc42272a4ae6"
+    "build_number": 67,
+    "commit": "26a39787189f5d3889ecc2d2f6d2fba90b09b288",
+    "tag": "build-67-26a3978",
+    "exe_sha256": "43bf73204eadd60a3217aab18dab062dbe700c3fa10ced11f480253c00f1c8ff"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -598,6 +598,16 @@
         "运行日志与掉落日志增加“清空列表”，日志页和挂机监控均可使用。",
         "仅清空当前显示，后续新记录继续显示；保留已保存的运行诊断日志，已清空掉落不会因后续金光更新重新出现。",
         "掉落记录可显示实际拾取玩家，宠物拾取显示其归属玩家；没有捕获到对应拾取信息时明确标为未确认。"
+      ]
+    },
+    {
+      "note_id": "client-compatibility-20261028",
+      "build_number": 67,
+      "commit": "26a39787189f5d3889ecc2d2f6d2fba90b09b288",
+      "tag": "build-67-26a3978",
+      "summary": [
+        "修复新版客户端的受保护地图、技能与怪物名称读取。",
+        "适配玩家移动、宠物隔离、Buff 图标、掉落特效，以及落叶斩和弓弩选敌的新版位置。"
       ]
     }
   ]
