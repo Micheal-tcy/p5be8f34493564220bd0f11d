@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 67,
-    "commit": "26a39787189f5d3889ecc2d2f6d2fba90b09b288",
-    "tag": "build-67-26a3978",
-    "exe_sha256": "43bf73204eadd60a3217aab18dab062dbe700c3fa10ced11f480253c00f1c8ff"
+    "build_number": 68,
+    "commit": "20a02df2fc16f4a34a729b5cff73cf9f1c32ec13",
+    "tag": "build-68-20a02df",
+    "exe_sha256": "a50406df5cee54721a294df3a2f24cb54399862803186270dfb35c7c5c264e1c"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -608,6 +608,16 @@
       "summary": [
         "修复新版客户端的受保护地图、技能与怪物名称读取。",
         "适配玩家移动、宠物隔离、Buff 图标、掉落特效，以及落叶斩和弓弩选敌的新版位置。"
+      ]
+    },
+    {
+      "note_id": "adaptive-map-walking-20261028",
+      "build_number": 68,
+      "commit": "20a02df2fc16f4a34a729b5cff73cf9f1c32ec13",
+      "tag": "build-68-20a02df",
+      "summary": [
+        "地图、技能和怪物名称、玩家移动增加受限自动适配，减少客户端仅调整已知代码位置时的重复更新。",
+        "保留完整校验；无法确认的代码或数据变化仍会提示不兼容。"
       ]
     }
   ]
