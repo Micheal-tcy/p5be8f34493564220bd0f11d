@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 70,
-    "commit": "75d540482f843cbea358074ee65cd2ac590a0bd1",
-    "tag": "build-70-75d5404",
-    "exe_sha256": "a826a1a7f9c0e8ddd58ff7e6a6f719530388f3001db30471fbc6244dac4ec1eb"
+    "build_number": 71,
+    "commit": "e31567a94bde21af839a5afceb2e9faf3ab44706",
+    "tag": "build-71-e31567a",
+    "exe_sha256": "209f74170b8485df47307933dd624b77e72e6c43096035b9d088d3df47c76d46"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -639,6 +639,17 @@
         "修复属性攻击的范围识别，并新增支持 41 项非战神攻击技能，覆盖部分近战、法术、弓弩、飞镖及能量、变身攻击。",
         "末日烈焰会等待最终施法动作结束，再恢复移动和 Buff；特殊条件失效时停止攻击，避免重复按键或打断。",
         "本次仍非全技能覆盖；蓄力、持续攻击、链式攻击及部分召唤等功能尚未完成。"
+      ]
+    },
+    {
+      "note_id": "late-client-and-damage-buffs-20261028",
+      "build_number": 71,
+      "commit": "e31567a94bde21af839a5afceb2e9faf3ab44706",
+      "tag": "build-71-e31567a",
+      "summary": [
+        "适配晚间客户端更新，修复角色数据过期导致的“请先连接角色并等待实时坐标”，恢复地图、名称、移动、Buff 图标、掉落及已有攻击读取。",
+        "修正骑士属性赋予等增益的分类：烈焰钝器等技能的伤害倍率不再被误认为一次攻击，单技能和纯 Buff 宏均使用正确分类。",
+        "仍拒绝真正攻击、未知和不完整定义；保留现有策略与个人配置。"
       ]
     }
   ]
