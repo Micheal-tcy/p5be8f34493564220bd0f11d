@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 75,
-    "commit": "75109a5db04159293b14dbcc3e1659bca195791e",
-    "tag": "build-75-75109a5",
-    "exe_sha256": "41e135791008b55bf102cb36dbdf6c27ed436307c1fdc90392338e9ccfa7a93f"
+    "build_number": 76,
+    "commit": "9ed65ae3f14c5236fd71cfc72bbf4de213463d9d",
+    "tag": "build-76-9ed65ae",
+    "exe_sha256": "7beb57978011c4ba217efe30de6eddf4678ae6d9ce5ab6410cd14131af9e2633"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -701,6 +701,16 @@
       "summary": [
         "修复角色被击退到范围外后，窄坡上仍有安全回位点却误报“没有安全步行路线”并停止的问题。",
         "修复坐标与脚下地形编号短暂不同步时，归位起步或续走丢失已验证接缝，造成误停或反复松键的问题。"
+      ]
+    },
+    {
+      "note_id": "chase-release-braking-20261030",
+      "build_number": 76,
+      "commit": "9ed65ae3f14c5236fd71cfc72bbf4de213463d9d",
+      "tag": "build-76-9ed65ae",
+      "summary": [
+        "修复追怪到达施放位置后，角色尚在滑动便反向起步、在相邻站位间左右碎步的问题。",
+        "反向修正先确认新鲜位置已稳定；同方向续走和已满足条件的攻击继续直接衔接，短距离纠正不再额外追求内侧余量。"
       ]
     }
   ]
