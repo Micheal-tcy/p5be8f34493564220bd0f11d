@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 73,
-    "commit": "fb154d86207f926d92e535f1874cd711b0c5be48",
-    "tag": "build-73-fb154d8",
-    "exe_sha256": "b5b778d27fc4341ec8fb1f207cccdfab22af1a206c06a0d58c4fae5597fbc94c"
+    "build_number": 74,
+    "commit": "2ed29b53f6df1306b87de2eab269010ece960068",
+    "tag": "build-74-2ed29b5",
+    "exe_sha256": "377de95d0db021ef15aa40576c1a7ced506be0ae6ec3254f0a9b234f71e9e7d8"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -670,6 +670,17 @@
       "summary": [
         "龙咆哮的技能设置新增“不寻怪”：只在当前位置满足施放条件时攻击，不为该技能追怪或寻找群攻站位。",
         "默认关闭，原有方案保持原行为；是否允许无怪施放仍由“忽略目标数量”单独控制。"
+      ]
+    },
+    {
+      "note_id": "expedition-selection-20261029",
+      "build_number": 74,
+      "commit": "2ed29b53f6df1306b87de2eab269010ece960068",
+      "tag": "build-74-2ed29b5",
+      "summary": [
+        "远征模式支持开始前勾选和选择目标，同一连接下停止再启动可继续使用临时选择。",
+        "Boss 多部位在目标列表与地图显示一致的序号，当前锁定目标在地图突出显示。",
+        "运行中可以更换或取消锁定；已发起的宏、准备施法及转场按安全规则结束后再切换，避免误停或重发。"
       ]
     }
   ]
