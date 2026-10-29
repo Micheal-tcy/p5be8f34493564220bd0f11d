@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 74,
-    "commit": "2ed29b53f6df1306b87de2eab269010ece960068",
-    "tag": "build-74-2ed29b5",
-    "exe_sha256": "377de95d0db021ef15aa40576c1a7ced506be0ae6ec3254f0a9b234f71e9e7d8"
+    "build_number": 75,
+    "commit": "75109a5db04159293b14dbcc3e1659bca195791e",
+    "tag": "build-75-75109a5",
+    "exe_sha256": "41e135791008b55bf102cb36dbdf6c27ed436307c1fdc90392338e9ccfa7a93f"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -681,6 +681,26 @@
         "远征模式支持开始前勾选和选择目标，同一连接下停止再启动可继续使用临时选择。",
         "Boss 多部位在目标列表与地图显示一致的序号，当前锁定目标在地图突出显示。",
         "运行中可以更换或取消锁定；已发起的宏、准备施法及转场按安全规则结束后再切换，避免误停或重发。"
+      ]
+    },
+    {
+      "note_id": "local-log-time-20261029",
+      "build_number": 75,
+      "commit": "75109a5db04159293b14dbcc3e1659bca195791e",
+      "tag": "build-75-75109a5",
+      "summary": [
+        "报警记录和聊天日志按 Windows 本机时区显示，UTC+8 电脑显示对应的本地时间，并标明 `UTC+08:00` 等实际偏移。",
+        "已保存的历史记录同样生效，支持跨日期、半小时时区及夏令时；详细日志保留毫秒。"
+      ]
+    },
+    {
+      "note_id": "uneven-floor-return-20261029",
+      "build_number": 75,
+      "commit": "75109a5db04159293b14dbcc3e1659bca195791e",
+      "tag": "build-75-75109a5",
+      "summary": [
+        "修复角色被击退到范围外后，窄坡上仍有安全回位点却误报“没有安全步行路线”并停止的问题。",
+        "修复坐标与脚下地形编号短暂不同步时，归位起步或续走丢失已验证接缝，造成误停或反复松键的问题。"
       ]
     }
   ]
