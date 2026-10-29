@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 72,
-    "commit": "3537469b421264169009ebb1f4d548700feb720b",
-    "tag": "build-72-3537469",
-    "exe_sha256": "7b7d16d9435644f6279956a397a072f01e7a0d382c68a07673000e5525856377"
+    "build_number": 73,
+    "commit": "fb154d86207f926d92e535f1874cd711b0c5be48",
+    "tag": "build-73-fb154d8",
+    "exe_sha256": "b5b778d27fc4341ec8fb1f207cccdfab22af1a206c06a0d58c4fae5597fbc94c"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -660,6 +660,16 @@
       "summary": [
         "修复箭雨、箭扫射等普通攻击被误判为外部准备施法，等待后停止挂机的问题。",
         "普通攻击保持原释放节奏；末日烈焰和真实外部准备施法继续保留生命周期保护。"
+      ]
+    },
+    {
+      "note_id": "roar-no-chase-20261029",
+      "build_number": 73,
+      "commit": "fb154d86207f926d92e535f1874cd711b0c5be48",
+      "tag": "build-73-fb154d8",
+      "summary": [
+        "龙咆哮的技能设置新增“不寻怪”：只在当前位置满足施放条件时攻击，不为该技能追怪或寻找群攻站位。",
+        "默认关闭，原有方案保持原行为；是否允许无怪施放仍由“忽略目标数量”单独控制。"
       ]
     }
   ]
