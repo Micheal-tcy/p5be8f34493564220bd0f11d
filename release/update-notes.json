@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 77,
-    "commit": "f187bc3c7fab0a88dff425e96aed77db2df5b2f7",
-    "tag": "build-77-f187bc3",
-    "exe_sha256": "66169585192b74f9f974e7241e74cda35cab5a73baae3a87526cb5264313d65f"
+    "build_number": 78,
+    "commit": "6abe6db83932e1557af55733b14adfb76554d3f2",
+    "tag": "build-78-6abe6db",
+    "exe_sha256": "9d510d57ab99716d4f0f334d6ad4d31cca80f54fda0841c42f8b3cc32dc2a6bd"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -721,6 +721,16 @@
       "summary": [
         "修复客户端更新后怪物名称读取失败、提示资源映射无法自动验证的问题。",
         "名称和地图资源的自动识别补入已审核的新版布局，继续保留旧版支持及完整校验。"
+      ]
+    },
+    {
+      "note_id": "healing-outside-patrol-area-20261030",
+      "build_number": 78,
+      "commit": "6abe6db83932e1557af55733b14adfb76554d3f2",
+      "tag": "build-78-6abe6db",
+      "summary": [
+        "治疗术现在会考虑移动范围外的低血量队友：当前能覆盖时直接治疗，否则在移动范围内寻找能治疗到对方的安全位置并接近。",
+        "角色仍遵守原有移动边界和同层安全路线；范围内无法治疗到对方时，不向范围外追赶。"
       ]
     }
   ]
