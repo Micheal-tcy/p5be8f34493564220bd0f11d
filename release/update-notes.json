@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 76,
-    "commit": "9ed65ae3f14c5236fd71cfc72bbf4de213463d9d",
-    "tag": "build-76-9ed65ae",
-    "exe_sha256": "7beb57978011c4ba217efe30de6eddf4678ae6d9ce5ab6410cd14131af9e2633"
+    "build_number": 77,
+    "commit": "f187bc3c7fab0a88dff425e96aed77db2df5b2f7",
+    "tag": "build-77-f187bc3",
+    "exe_sha256": "66169585192b74f9f974e7241e74cda35cab5a73baae3a87526cb5264313d65f"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -711,6 +711,16 @@
       "summary": [
         "修复追怪到达施放位置后，角色尚在滑动便反向起步、在相邻站位间左右碎步的问题。",
         "反向修正先确认新鲜位置已稳定；同方向续走和已满足条件的攻击继续直接衔接，短距离纠正不再额外追求内侧余量。"
+      ]
+    },
+    {
+      "note_id": "resource-mapping-adaptive-late-20261030",
+      "build_number": 77,
+      "commit": "f187bc3c7fab0a88dff425e96aed77db2df5b2f7",
+      "tag": "build-77-f187bc3",
+      "summary": [
+        "修复客户端更新后怪物名称读取失败、提示资源映射无法自动验证的问题。",
+        "名称和地图资源的自动识别补入已审核的新版布局，继续保留旧版支持及完整校验。"
       ]
     }
   ]
