@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 86,
-    "commit": "3b36512e876a49b87fdf9803f66428a1bd21236d",
-    "tag": "build-86-3b36512",
-    "exe_sha256": "a576e9be993f1f3d6f6f5d46a6ab9d41e59ef8e9bcf27a03aeaecb40b6a5b7da"
+    "build_number": 87,
+    "commit": "fae9f33eb1d8edc2c63e1b994f5f991c26653d1e",
+    "tag": "build-87-fae9f33",
+    "exe_sha256": "5354b98ae0d0eb0e9c235a864b12d411f7eaa9deaa5eb05fdd100ef4c4b6849c"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -869,6 +869,16 @@
         "修复性能优化模式分步规划时，未过期的重复采样导致反复松键的小碎步；按采样年龄和实时速度上限预留终点及边界的安全距离，在原路线仍有效时保持方向。",
         "修复怪物轻微移动使旧攻击点失效后，分步规划反复中断追怪的问题。新鲜采样下最多复核原点附近 8 像素的站位，可沿唯一相接的短地形段衔接；原目标、命中人数、方向和安全路线全部重新满足后才继续移动。",
         "保留采样过期、目标、技能、地形和输入检查；重复采样不延长进展计时，也不发起新的瞬移、跳跃或攻击。"
+      ]
+    },
+    {
+      "note_id": "nov01-update-notes-entry-assaulter-diagnostics",
+      "build_number": 87,
+      "commit": "fae9f33eb1d8edc2c63e1b994f5f991c26653d1e",
+      "tag": "build-87-fae9f33",
+      "summary": [
+        "更新日志移到窗口顶部的独立入口，运行设置不再显示更新面板；源码版和离线状态也可查看随程序附带的说明。",
+        "落叶斩无法施放时，分别提示客户端校验、短刀要求或技能资源问题，并保留具体校验错误，方便定位原因。"
       ]
     }
   ]
