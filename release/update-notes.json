@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 88,
-    "commit": "ef3f2a65b81510508185665c8f357e36dff6cf9e",
-    "tag": "build-88-ef3f2a6",
-    "exe_sha256": "e522f4da3a3ab52dd775c31c3faf35a7223da9263ba6b8f75c1853e500d39fc6"
+    "build_number": 89,
+    "commit": "48c9e1cc985e6baa0caf9faf89719f95598de217",
+    "tag": "build-89-48c9e1c",
+    "exe_sha256": "4edc05357562f6bdeca8c770ea1c586a6cc13bf25c94ec279a6c6ea01439eed6"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -889,6 +889,16 @@
       "summary": [
         "落叶斩满足普通施放条件后直接释放，不再因预计落点、坡面、平台长度、墙体或移动范围边界而阻止出招。",
         "释放后按角色动作结束恢复战斗，不要求落在预测位置或连续两帧站稳；落点变化不再触发落叶斩路径错误。"
+      ]
+    },
+    {
+      "note_id": "nov01-assaulter-passive-observation",
+      "build_number": 89,
+      "commit": "48c9e1cc985e6baa0caf9faf89719f95598de217",
+      "tag": "build-89-48c9e1c",
+      "summary": [
+        "修复落叶斩已松键、正在等待动作结束时，因移动输入暂时不可用而误报异常停机的问题。",
+        "当前角色快照仍有效时，短暂调度延迟不再中断落叶斩观察；后摇结束仍立即交还普通策略，无需等待站稳。"
       ]
     }
   ]
