@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 89,
-    "commit": "48c9e1cc985e6baa0caf9faf89719f95598de217",
-    "tag": "build-89-48c9e1c",
-    "exe_sha256": "4edc05357562f6bdeca8c770ea1c586a6cc13bf25c94ec279a6c6ea01439eed6"
+    "build_number": 90,
+    "commit": "6e8de0778d713adcbf4ac98113617228fca28168",
+    "tag": "build-90-6e8de07",
+    "exe_sha256": "1318a87d647647396e6f6e5b46bd523c0bce8c36dd285f69320f572b6bf4d976"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -899,6 +899,16 @@
       "summary": [
         "修复落叶斩已松键、正在等待动作结束时，因移动输入暂时不可用而误报异常停机的问题。",
         "当前角色快照仍有效时，短暂调度延迟不再中断落叶斩观察；后摇结束仍立即交还普通策略，无需等待站稳。"
+      ]
+    },
+    {
+      "note_id": "nov01-walking-drop-exact-sampling",
+      "build_number": 90,
+      "commit": "6e8de0778d713adcbf4ac98113617228fca28168",
+      "tag": "build-90-6e8de07",
+      "summary": [
+        "修复 11 月 1 日客户端更新后，移动和掉落兼容检查反复搜索、导致采样过期而无法开始挂机的问题。",
+        "补齐已核验的新布局，保留旧版兼容、完整校验和原有采样时效要求。"
       ]
     }
   ]
