@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 87,
-    "commit": "fae9f33eb1d8edc2c63e1b994f5f991c26653d1e",
-    "tag": "build-87-fae9f33",
-    "exe_sha256": "5354b98ae0d0eb0e9c235a864b12d411f7eaa9deaa5eb05fdd100ef4c4b6849c"
+    "build_number": 88,
+    "commit": "ef3f2a65b81510508185665c8f357e36dff6cf9e",
+    "tag": "build-88-ef3f2a6",
+    "exe_sha256": "e522f4da3a3ab52dd775c31c3faf35a7223da9263ba6b8f75c1853e500d39fc6"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -879,6 +879,16 @@
       "summary": [
         "更新日志移到窗口顶部的独立入口，运行设置不再显示更新面板；源码版和离线状态也可查看随程序附带的说明。",
         "落叶斩无法施放时，分别提示客户端校验、短刀要求或技能资源问题，并保留具体校验错误，方便定位原因。"
+      ]
+    },
+    {
+      "note_id": "nov01-assaulter-without-landing-check",
+      "build_number": 88,
+      "commit": "ef3f2a65b81510508185665c8f357e36dff6cf9e",
+      "tag": "build-88-ef3f2a6",
+      "summary": [
+        "落叶斩满足普通施放条件后直接释放，不再因预计落点、坡面、平台长度、墙体或移动范围边界而阻止出招。",
+        "释放后按角色动作结束恢复战斗，不要求落在预测位置或连续两帧站稳；落点变化不再触发落叶斩路径错误。"
       ]
     }
   ]
