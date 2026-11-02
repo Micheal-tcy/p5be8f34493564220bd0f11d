@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 90,
-    "commit": "6e8de0778d713adcbf4ac98113617228fca28168",
-    "tag": "build-90-6e8de07",
-    "exe_sha256": "1318a87d647647396e6f6e5b46bd523c0bce8c36dd285f69320f572b6bf4d976"
+    "build_number": 91,
+    "commit": "a3753b3b5b4e5b1106223b210f93cfcc580f6e44",
+    "tag": "build-91-a3753b3",
+    "exe_sha256": "22151f18c6a8592c12c202be8846a9a0d51cbd2b62f7e5504916163d606b9943"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -909,6 +909,17 @@
       "summary": [
         "修复 11 月 1 日客户端更新后，移动和掉落兼容检查反复搜索、导致采样过期而无法开始挂机的问题。",
         "补齐已核验的新布局，保留旧版兼容、完整校验和原有采样时效要求。"
+      ]
+    },
+    {
+      "note_id": "client-compat-and-connection-diagnostics-20261102",
+      "build_number": 91,
+      "commit": "a3753b3b5b4e5b1106223b210f93cfcc580f6e44",
+      "tag": "build-91-a3753b3",
+      "summary": [
+        "补齐 11 月 1 日客户端的箭扫射及名称资源兼容，修复选敌校验未就绪和名称映射失败。",
+        "“连接 → 诊断信息”集中列出当前发现的读取、技能及启动问题，并支持复制全部诊断。",
+        "诊断保留具体兼容失败原因，附带程序版本与连接上下文，便于一次反馈多项问题。"
       ]
     }
   ]
