@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 91,
-    "commit": "a3753b3b5b4e5b1106223b210f93cfcc580f6e44",
-    "tag": "build-91-a3753b3",
-    "exe_sha256": "22151f18c6a8592c12c202be8846a9a0d51cbd2b62f7e5504916163d606b9943"
+    "build_number": 92,
+    "commit": "1c0ec432fb65e729fb37467961aaf4d61dd8c89d",
+    "tag": "build-92-1c0ec43",
+    "exe_sha256": "a6a2895b6ef19ee44f7add009144ee91e0905261bca70456e66f387682b41f9a"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -920,6 +920,16 @@
         "补齐 11 月 1 日客户端的箭扫射及名称资源兼容，修复选敌校验未就绪和名称映射失败。",
         "“连接 → 诊断信息”集中列出当前发现的读取、技能及启动问题，并支持复制全部诊断。",
         "诊断保留具体兼容失败原因，附带程序版本与连接上下文，便于一次反馈多项问题。"
+      ]
+    },
+    {
+      "note_id": "remember-background-mode-20261102",
+      "build_number": 92,
+      "commit": "1c0ec432fb65e729fb37467961aaf4d61dd8c89d",
+      "tag": "build-92-1c0ec43",
+      "summary": [
+        "后台模式按设备、按助手页签记住选择，重新打开并连接游戏后自动恢复，无需每次重新勾选。",
+        "手动关闭也会保存；后台恢复失败会提示原因，不自动反复重试，挂机仍需手动开始。"
       ]
     }
   ]
