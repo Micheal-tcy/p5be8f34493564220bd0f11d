@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 97,
-    "commit": "4586f7397f93a990cf44f48ba198bf328483a1bc",
-    "tag": "build-97-4586f73",
-    "exe_sha256": "f450daf431a4e36068d2bc13481ff0a5314a275746f980757158445dd443a891"
+    "build_number": 98,
+    "commit": "ffb62695a60d0ba53e7bfb6a29ef1e0b7b4aab14",
+    "tag": "build-98-ffb6269",
+    "exe_sha256": "0900a50cfa8fb4d191038fd608b838e32a05bdb03fb53e4e13a67dd4b60ddfd8"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -969,6 +969,15 @@
       "summary": [
         "修复跳回目标平台后，落地首帧坐标尚未同步就立即报警的问题。",
         "复用未变化的地图快照，减少重复冻结开销，并补充脚本超时诊断。"
+      ]
+    },
+    {
+      "note_id": "preferred-return-first-20261105",
+      "build_number": 98,
+      "commit": "ffb62695a60d0ba53e7bfb6a29ef1e0b7b4aab14",
+      "tag": "build-98-ffb6269",
+      "summary": [
+        "离开指定主平台后优先回位，回到主平台再追怪和攻击，不再等待清完当前平台的怪物。"
       ]
     }
   ]
