@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 93,
-    "commit": "f3e1e8054e4716764e87b9820a381cd2bf708b6d",
-    "tag": "build-93-f3e1e80",
-    "exe_sha256": "8e907880a7f600f887d3e077609a87a16c5e4c4d90048b235a230592d640733b"
+    "build_number": 95,
+    "commit": "7162dc8d4f4453f387bd3ff5eb560949df4728f2",
+    "tag": "build-95-7162dc8",
+    "exe_sha256": "5e6410b7cba7ab79713f8edde27914d98c9bd2bccbb0b8b18501bd383276ccfc"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -939,6 +939,15 @@
       "tag": "build-93-f3e1e80",
       "summary": [
         "补齐 11 月 3 日客户端 DLL 的弓系兼容，修复箭扫射因映像大小变化而提示选敌与地形遮挡判定尚未核对的问题。"
+      ]
+    },
+    {
+      "note_id": "vitals-encoding-latency-20261105",
+      "build_number": 95,
+      "commit": "7162dc8d4f4453f387bd3ff5eb560949df4728f2",
+      "tag": "build-95-7162dc8",
+      "summary": [
+        "修复在龙穴等地图上角色已连接，却因血蓝或地图编号反复重新编码而难以开始运行的问题。"
       ]
     }
   ]
