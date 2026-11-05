@@ -1,23 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 99,
-    "commit": "b087e00a2ee825176c7e55e13c7e587dc10d77a4",
-    "tag": "build-99-b087e00",
-    "exe_sha256": "d2cf2811797f74399baa99838652c58cccfdc1aea7a0f989526d95317186b1f1"
+    "build_number": 100,
+    "commit": "a8681d71caf0eddc47f7e99fd8ad506bce4d8d22",
+    "tag": "build-100-a8681d7",
+    "exe_sha256": "5b0ca6daec86c91cedb961d80f81419137bdc9d29d7df27314e0241151e8d0b8"
   },
-  "history_complete_after_build": 0,
+  "history_complete_after_build": 1,
   "entries": [
-    {
-      "note_id": "history-build-1",
-      "build_number": 1,
-      "commit": "f2a310c59acb25557f8b60e6eccdc47c1dd1a8c4",
-      "tag": "build-1-f2a310c",
-      "summary": [
-        "整合多助手分页界面、助手前台快捷键与自动更新入口。",
-        "挂机启动后自动进入精简界面，地图框选保留手动视角。"
-      ]
-    },
     {
       "note_id": "history-build-2",
       "build_number": 2,
@@ -999,6 +989,16 @@
       "summary": [
         "修复回位路线刚建好时跳跃资料短暂缺失就直接报警的问题，恢复完整资料后按实际站位重新规划。",
         "修复横跳受扰松键后经过已知平台边缘时，在尚未落地前误报恢复失败的问题。"
+      ]
+    },
+    {
+      "note_id": "preferred-range-optimizer-20261106",
+      "build_number": 100,
+      "commit": "a8681d71caf0eddc47f7e99fd8ad506bce4d8d22",
+      "tag": "build-100-a8681d7",
+      "summary": [
+        "选择主平台或完成移动范围编辑后，后台检测回位路线；优先小幅扩展范围，无法通过时提供可手动采用的收缩方案。",
+        "修复走向起跳点期间意外离地就立即报警的问题，松键观察安全落地并重新确认后，再按原任务重规划。"
       ]
     }
   ]
