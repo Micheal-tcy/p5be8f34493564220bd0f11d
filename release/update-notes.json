@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 95,
-    "commit": "7162dc8d4f4453f387bd3ff5eb560949df4728f2",
-    "tag": "build-95-7162dc8",
-    "exe_sha256": "5e6410b7cba7ab79713f8edde27914d98c9bd2bccbb0b8b18501bd383276ccfc"
+    "build_number": 96,
+    "commit": "acaf68b141b81bf767511dc0fa5ac27af7c8183e",
+    "tag": "build-96-acaf68b",
+    "exe_sha256": "450f229693f64666044b25ddf8aa3ad674b8938d2be770a3b0c3ae0ca39b740c"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -948,6 +948,17 @@
       "tag": "build-95-7162dc8",
       "summary": [
         "修复在龙穴等地图上角色已连接，却因血蓝或地图编号反复重新编码而难以开始运行的问题。"
+      ]
+    },
+    {
+      "note_id": "ogl-sampling-and-preferred-platform-20261105",
+      "build_number": 96,
+      "commit": "acaf68b141b81bf767511dc0fa5ac27af7c8183e",
+      "tag": "build-96-acaf68b",
+      "summary": [
+        "优化 OpenGL 地面采样与恢复缓存，减少反复停顿。",
+        "减少持续攻击时的重复站位计算，降低脚本超时风险。",
+        "支持选择清怪后回到的主平台，并改进短坡移动和越界跳回平台。"
       ]
     }
   ]
