@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 96,
-    "commit": "acaf68b141b81bf767511dc0fa5ac27af7c8183e",
-    "tag": "build-96-acaf68b",
-    "exe_sha256": "450f229693f64666044b25ddf8aa3ad674b8938d2be770a3b0c3ae0ca39b740c"
+    "build_number": 97,
+    "commit": "4586f7397f93a990cf44f48ba198bf328483a1bc",
+    "tag": "build-97-4586f73",
+    "exe_sha256": "f450daf431a4e36068d2bc13481ff0a5314a275746f980757158445dd443a891"
   },
   "history_complete_after_build": 0,
   "entries": [
@@ -959,6 +959,16 @@
         "优化 OpenGL 地面采样与恢复缓存，减少反复停顿。",
         "减少持续攻击时的重复站位计算，降低脚本超时风险。",
         "支持选择清怪后回到的主平台，并改进短坡移动和越界跳回平台。"
+      ]
+    },
+    {
+      "note_id": "jump-landing-and-frozen-map-20261105",
+      "build_number": 97,
+      "commit": "4586f7397f93a990cf44f48ba198bf328483a1bc",
+      "tag": "build-97-4586f73",
+      "summary": [
+        "修复跳回目标平台后，落地首帧坐标尚未同步就立即报警的问题。",
+        "复用未变化的地图快照，减少重复冻结开销，并补充脚本超时诊断。"
       ]
     }
   ]
