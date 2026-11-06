@@ -1,22 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 108,
-    "commit": "96af7b3bc6f41465588b1771bb5159e485be8878",
-    "tag": "build-108-96af7b3",
-    "exe_sha256": "a3f594270dc96beb87941b37dd0767537b95d665d4bf618ace2b94f858b2a509"
+    "build_number": 109,
+    "commit": "a9d416da27afdaaed417aa840a2af8a528d9dabc",
+    "tag": "build-109-a9d416d",
+    "exe_sha256": "ee8bc7eadef33c26f57e960bbbc684a6fe7b73166a54bfb7b24be88e5112ba65"
   },
-  "history_complete_after_build": 8,
+  "history_complete_after_build": 9,
   "entries": [
-    {
-      "note_id": "history-build-9",
-      "build_number": 9,
-      "commit": "e4f797db335dd9234239f2085ca3e4664cab841f",
-      "tag": "build-9-e4f797d",
-      "summary": [
-        "大地图导航分步计算并复用规划结果，减少脚本超时和重复等待。"
-      ]
-    },
     {
       "note_id": "history-build-10",
       "build_number": 10,
@@ -1004,6 +995,16 @@
       "summary": [
         "跳跃中断后优先利用已验证缓存尝试归位，减少重复的停稳检查；缓存尝试失败后再松键复查。",
         "回位连续失败报警从 3 次调整到 5 次，重复快照和等待过程不计失败。"
+      ]
+    },
+    {
+      "note_id": "continuous-cache-return-20261106",
+      "build_number": 109,
+      "commit": "a9d416da27afdaaed417aa840a2af8a528d9dabc",
+      "tag": "build-109-a9d416d",
+      "summary": [
+        "跳跃中断后的缓存归位随新鲜位置连续修正方向，减少短按后反复停车等待。",
+        "实际落地和当前能力验证通过后直接衔接下一跳、步行或攻击；缓存尝试真正失败后再停稳复查。"
       ]
     }
   ]
