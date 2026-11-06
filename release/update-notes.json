@@ -1,22 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 107,
-    "commit": "f526390b5c4b17743779b43f65f709700d014427",
-    "tag": "build-107-f526390",
-    "exe_sha256": "2b6a8d8549be09df2ec1f242ea65b1e3110052cbc1f89423e48b6811f1157093"
+    "build_number": 108,
+    "commit": "96af7b3bc6f41465588b1771bb5159e485be8878",
+    "tag": "build-108-96af7b3",
+    "exe_sha256": "a3f594270dc96beb87941b37dd0767537b95d665d4bf618ace2b94f858b2a509"
   },
-  "history_complete_after_build": 7,
+  "history_complete_after_build": 8,
   "entries": [
-    {
-      "note_id": "history-build-8",
-      "build_number": 8,
-      "commit": "1951a4ffa5fcfdc990f5df4f7be4c7ad2f6c2bda",
-      "tag": "build-8-1951a4f",
-      "summary": [
-        "适配新版客户端的宠物跟随改动，恢复移动读取并保留玩家移动边界。"
-      ]
-    },
     {
       "note_id": "history-build-9",
       "build_number": 9,
@@ -1003,6 +994,16 @@
       "summary": [
         "回位路线验证通过后直接衔接移动与跳跃，减少决定回位、创建路线时的额外停车等待。",
         "已验证的方向跳跃在空中保留方向移动；落到安全平台后可边移动边确认支撑，范围回位不再为单一坐标来回微调。"
+      ]
+    },
+    {
+      "note_id": "cached-transfer-rejoin-first-20261106",
+      "build_number": 108,
+      "commit": "96af7b3bc6f41465588b1771bb5159e485be8878",
+      "tag": "build-108-96af7b3",
+      "summary": [
+        "跳跃中断后优先利用已验证缓存尝试归位，减少重复的停稳检查；缓存尝试失败后再松键复查。",
+        "回位连续失败报警从 3 次调整到 5 次，重复快照和等待过程不计失败。"
       ]
     }
   ]
