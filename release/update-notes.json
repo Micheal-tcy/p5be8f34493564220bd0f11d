@@ -1,22 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 104,
-    "commit": "6a131aa3380501dd15077978339253811d917932",
-    "tag": "build-104-6a131aa",
-    "exe_sha256": "3e2c54d901b9d878d774ef1c27c0eb36ba244ff13be41fe9f6d4250c1cb092d4"
+    "build_number": 105,
+    "commit": "0e2b3ec145aa109216e184f0e9886f278a849b1a",
+    "tag": "build-105-0e2b3ec",
+    "exe_sha256": "0006a07e9f4df8fb0bbfa803c41c781b4e6a0a7e4b92f26339b76879ac62de01"
   },
-  "history_complete_after_build": 4,
+  "history_complete_after_build": 5,
   "entries": [
-    {
-      "note_id": "history-build-5",
-      "build_number": 5,
-      "commit": "e8d4500f7b4cfeab28cf396e07b33b91b52f15a9",
-      "tag": "build-5-e8d4500",
-      "summary": [
-        "按启停快捷键时先保存地图范围与方案，再开始运行。"
-      ]
-    },
     {
       "note_id": "history-build-6",
       "build_number": 6,
@@ -1002,6 +993,15 @@
         "回平台取消助跑等待，按目标方向直接起跳，减少原地转向与停顿。",
         "根据实际重力、空中移动和斜坡落点重新验证跳跃路线，修复坡边反向回位及不合理的起跳点。",
         "回位受扰后按真实落地重新规划，失败路线换点重试，连续三次失败才报警；OGL 与 DX12 通用。"
+      ]
+    },
+    {
+      "note_id": "transfer-sampling-landing-resume-20261106",
+      "build_number": 105,
+      "commit": "0e2b3ec145aa109216e184f0e9886f278a849b1a",
+      "tag": "build-105-0e2b3ec",
+      "summary": [
+        "修复跨层移动时采样短暂中断就立即停止的问题，先松键等待采样恢复和稳定落地，再从实际落点重新规划原目标。"
       ]
     }
   ]
