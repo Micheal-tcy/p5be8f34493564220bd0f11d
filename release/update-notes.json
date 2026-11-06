@@ -1,22 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 101,
-    "commit": "1f407349f2ccbbd93f2f13ce38ef96b934176253",
-    "tag": "build-101-1f40734",
-    "exe_sha256": "9b9b86bfc95fb519421fd1a7b210adbacb5f9f3ddab43542f809335969ddb57b"
+    "build_number": 102,
+    "commit": "f793a4cd9f9d670643ff0aa673ef200fc6a57356",
+    "tag": "build-102-f793a4c",
+    "exe_sha256": "aa3973203d52e7df0abb3c3800f41c6f7631335b8e22d5c68324fe8f480ccca8"
   },
-  "history_complete_after_build": 2,
+  "history_complete_after_build": 3,
   "entries": [
-    {
-      "note_id": "history-build-3",
-      "build_number": 3,
-      "commit": "b20d1c8c4691e03ff16c5d198b4140a9c60e71a8",
-      "tag": "build-3-b20d1c8",
-      "summary": [
-        "更新检查和下载改用公开发布直链，避免匿名接口限流导致无法更新。"
-      ]
-    },
     {
       "note_id": "history-build-4",
       "build_number": 4,
@@ -1000,6 +991,16 @@
       "summary": [
         "补齐新版客户端的移动、箭扫射和名称／地图资源兼容，修复连接后无法开始挂机的问题。",
         "补齐掉落特效兼容，避免已识别版本在开启掉落读取时反复进入自动搜索。"
+      ]
+    },
+    {
+      "note_id": "transfer-landing-recovery-20261106",
+      "build_number": 102,
+      "commit": "f793a4cd9f9d670643ff0aa673ef200fc6a57356",
+      "tag": "build-102-f793a4c",
+      "summary": [
+        "转平台受扰后先松键等待真实落地，再按当前平台重新规划回位；连续三次回位失败才报警。",
+        "OGL 模式的策略单轮执行上限由 50ms 调整为 80ms，减少虚拟机调度波动引起的误报。"
       ]
     }
   ]
