@@ -1,22 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 100,
-    "commit": "a8681d71caf0eddc47f7e99fd8ad506bce4d8d22",
-    "tag": "build-100-a8681d7",
-    "exe_sha256": "5b0ca6daec86c91cedb961d80f81419137bdc9d29d7df27314e0241151e8d0b8"
+    "build_number": 101,
+    "commit": "1f407349f2ccbbd93f2f13ce38ef96b934176253",
+    "tag": "build-101-1f40734",
+    "exe_sha256": "9b9b86bfc95fb519421fd1a7b210adbacb5f9f3ddab43542f809335969ddb57b"
   },
-  "history_complete_after_build": 1,
+  "history_complete_after_build": 2,
   "entries": [
-    {
-      "note_id": "history-build-2",
-      "build_number": 2,
-      "commit": "2f45c5b0c6a0e0bb7b407c67b7c3849d577a70a8",
-      "tag": "build-2-2f45c5b",
-      "summary": [
-        "完善安装包发布流程，使主干提交与对应程序更新配套。"
-      ]
-    },
     {
       "note_id": "history-build-3",
       "build_number": 3,
@@ -999,6 +990,16 @@
       "summary": [
         "选择主平台或完成移动范围编辑后，后台检测回位路线；优先小幅扩展范围，无法通过时提供可手动采用的收缩方案。",
         "修复走向起跳点期间意外离地就立即报警的问题，松键观察安全落地并重新确认后，再按原任务重规划。"
+      ]
+    },
+    {
+      "note_id": "client-compat-20261106",
+      "build_number": 101,
+      "commit": "1f407349f2ccbbd93f2f13ce38ef96b934176253",
+      "tag": "build-101-1f40734",
+      "summary": [
+        "补齐新版客户端的移动、箭扫射和名称／地图资源兼容，修复连接后无法开始挂机的问题。",
+        "补齐掉落特效兼容，避免已识别版本在开启掉落读取时反复进入自动搜索。"
       ]
     }
   ]
