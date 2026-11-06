@@ -1,23 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 105,
-    "commit": "0e2b3ec145aa109216e184f0e9886f278a849b1a",
-    "tag": "build-105-0e2b3ec",
-    "exe_sha256": "0006a07e9f4df8fb0bbfa803c41c781b4e6a0a7e4b92f26339b76879ac62de01"
+    "build_number": 106,
+    "commit": "8a8167f7f966a917eaccad984504730f956d54e1",
+    "tag": "build-106-8a8167f",
+    "exe_sha256": "38f2371d418645ef3a70bad43e4a3fb75551a843ea745c85bbf9a4de122e6777"
   },
-  "history_complete_after_build": 5,
+  "history_complete_after_build": 6,
   "entries": [
-    {
-      "note_id": "history-build-6",
-      "build_number": 6,
-      "commit": "54b6aea210b50c29ae74a537443be6c7466cce25",
-      "tag": "build-6-54b6aea",
-      "summary": [
-        "修复连通平台端点的回位误判，新增连续越界后回中心选项。",
-        "报警仅在策略成功运行后触发，停止后保留已触发报警的消音倒计时。"
-      ]
-    },
     {
       "note_id": "history-build-7",
       "build_number": 7,
@@ -1002,6 +992,17 @@
       "tag": "build-105-0e2b3ec",
       "summary": [
         "修复跨层移动时采样短暂中断就立即停止的问题，先松键等待采样恢复和稳定落地，再从实际落点重新规划原目标。"
+      ]
+    },
+    {
+      "note_id": "whisper-notifications-20261106",
+      "build_number": 106,
+      "commit": "8a8167f7f966a917eaccad984504730f956d54e1",
+      "tag": "build-106-8a8167f",
+      "summary": [
+        "聊天提醒新增“收到私聊系统提示”，与所有人聊天独立开启并保存，默认关闭。",
+        "收到私聊时显示发信者、内容和接收角色，发送回显不提醒；沿用聊天提示音及全屏优先设置。",
+        "私聊只用于提醒，不写入本地聊天日志；开启开关不补发历史消息。"
       ]
     }
   ]
