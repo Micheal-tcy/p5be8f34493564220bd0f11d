@@ -1,23 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 106,
-    "commit": "8a8167f7f966a917eaccad984504730f956d54e1",
-    "tag": "build-106-8a8167f",
-    "exe_sha256": "38f2371d418645ef3a70bad43e4a3fb75551a843ea745c85bbf9a4de122e6777"
+    "build_number": 107,
+    "commit": "f526390b5c4b17743779b43f65f709700d014427",
+    "tag": "build-107-f526390",
+    "exe_sha256": "2b6a8d8549be09df2ec1f242ea65b1e3110052cbc1f89423e48b6811f1157093"
   },
-  "history_complete_after_build": 6,
+  "history_complete_after_build": 7,
   "entries": [
-    {
-      "note_id": "history-build-7",
-      "build_number": 7,
-      "commit": "ca667e0b468be803c63d90bd80566e1dba7a4c24",
-      "tag": "build-7-ca667e0",
-      "summary": [
-        "区分金色闪光、白名单与普通掉落提醒，改进语音和地图标记。",
-        "地图识别并区分未激活的 Boss。"
-      ]
-    },
     {
       "note_id": "history-build-8",
       "build_number": 8,
@@ -1003,6 +993,16 @@
         "聊天提醒新增“收到私聊系统提示”，与所有人聊天独立开启并保存，默认关闭。",
         "收到私聊时显示发信者、内容和接收角色，发送回显不提醒；沿用聊天提示音及全屏优先设置。",
         "私聊只用于提醒，不写入本地聊天日志；开启开关不补发历史消息。"
+      ]
+    },
+    {
+      "note_id": "continuous-return-jump-reference-20261106",
+      "build_number": 107,
+      "commit": "f526390b5c4b17743779b43f65f709700d014427",
+      "tag": "build-107-f526390",
+      "summary": [
+        "回位路线验证通过后直接衔接移动与跳跃，减少决定回位、创建路线时的额外停车等待。",
+        "已验证的方向跳跃在空中保留方向移动；落到安全平台后可边移动边确认支撑，范围回位不再为单一坐标来回微调。"
       ]
     }
   ]
