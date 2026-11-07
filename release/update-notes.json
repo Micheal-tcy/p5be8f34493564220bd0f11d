@@ -1,23 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 114,
-    "commit": "3e5eccd916ef1f1a3a1d3caa331625e72b4cdc49",
-    "tag": "build-114-3e5eccd",
-    "exe_sha256": "bb5640a2f9b176f4141dd6bcb2b2ae1d8e515e12f718a53642318dc8740d9ee9"
+    "build_number": 115,
+    "commit": "fcd9d806635dae5b641a8ca773c7458668763f20",
+    "tag": "build-115-fcd9d80",
+    "exe_sha256": "71150ff547a11f7e8e826373c3d7197df0dd743fea587286c30193c26ebe58e4"
   },
-  "history_complete_after_build": 17,
+  "history_complete_after_build": 18,
   "entries": [
-    {
-      "note_id": "history-build-18",
-      "build_number": 18,
-      "commit": "4c943863789bdb726da42553745701c1cbb7dfbd",
-      "tag": "build-18-4c94386",
-      "summary": [
-        "适配新版移动物理，改善贴地抓梯、绳梯定位与跨层衔接。",
-        "装备和卷轴拾取遇到短暂位移干扰后可有限恢复，复杂地图支持更多地形。"
-      ]
-    },
     {
       "note_id": "history-build-19",
       "build_number": 19,
@@ -1004,6 +994,16 @@
         "补齐 11 月 7 日客户端的移动和箭扫射校验，修复启动预检失败。",
         "恢复怪物和技能名称映射，补齐掉落特效布局，减少每轮采样重复搜索。",
         "继续核验完整代码、运行状态和数据一致性，采样有效期保持 250ms。"
+      ]
+    },
+    {
+      "note_id": "fire-arrow-client-selection",
+      "build_number": 115,
+      "commit": "fcd9d806635dae5b641a8ca773c7458668763f20",
+      "tag": "build-115-fcd9d80",
+      "summary": [
+        "支持将单独绑定的烈火箭加入弓箭手策略，读取实际等级、射程和弹药条件。",
+        "核对首目标和地形射线，按命中点的扩散范围计算最多六个实际候选，持续施放时复核站位和目标。"
       ]
     }
   ]
