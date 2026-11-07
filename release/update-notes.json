@@ -1,22 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 109,
-    "commit": "a9d416da27afdaaed417aa840a2af8a528d9dabc",
-    "tag": "build-109-a9d416d",
-    "exe_sha256": "ee8bc7eadef33c26f57e960bbbc684a6fe7b73166a54bfb7b24be88e5112ba65"
+    "build_number": 110,
+    "commit": "d74f72174ae03e45e3e3779b301a7b9fd27ce0a5",
+    "tag": "build-110-d74f721",
+    "exe_sha256": "9f0fa657806678d9bc2c57e9c9474407d3d36e13628d11a5dfcb4f18c7071484"
   },
-  "history_complete_after_build": 9,
+  "history_complete_after_build": 10,
   "entries": [
-    {
-      "note_id": "history-build-10",
-      "build_number": 10,
-      "commit": "7f06b8f28a7ac84dc052b0d9deacbe37860e5bd3",
-      "tag": "build-10-7f06b8f",
-      "summary": [
-        "安装包默认由云端构建发布，同时保留本机打包方式。"
-      ]
-    },
     {
       "note_id": "history-build-11",
       "build_number": 11,
@@ -1005,6 +996,15 @@
       "summary": [
         "跳跃中断后的缓存归位随新鲜位置连续修正方向，减少短按后反复停车等待。",
         "实际落地和当前能力验证通过后直接衔接下一跳、步行或攻击；缓存尝试真正失败后再停稳复查。"
+      ]
+    },
+    {
+      "note_id": "private-background-manual-takeover-20261107",
+      "build_number": 110,
+      "commit": "d74f72174ae03e45e3e3779b301a7b9fd27ce0a5",
+      "tag": "build-110-d74f721",
+      "summary": [
+        "开启后台模式时，游戏在前台也会优先响应手动按键，助手松键等待；其他窗口打字仍不影响后台挂机。"
       ]
     }
   ]
