@@ -1,23 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 111,
-    "commit": "9d08b38f596f7bc9395e81b7b7b3914ecea1723d",
-    "tag": "build-111-9d08b38",
-    "exe_sha256": "d623b4713abbe972beabf8386a363a0c655ae94a573ef030500ef8f65d599f3b"
+    "build_number": 113,
+    "commit": "f0bde1ef8a38fafb2c5c17b8293035a0ff84ea79",
+    "tag": "build-113-f0bde1e",
+    "exe_sha256": "a91d253554c7ee8e394c6dc5f8e8f050b3ddd2d26fa15e424136bd496b12bc56"
   },
-  "history_complete_after_build": 14,
+  "history_complete_after_build": 16,
   "entries": [
-    {
-      "note_id": "history-build-16",
-      "build_number": 16,
-      "commit": "6189b3061f356a55f2057b1326a084888b860f22",
-      "tag": "build-16-6189b30",
-      "summary": [
-        "适配十月十六日客户端更新，恢复移动物理读取。",
-        "调整构建发布流程，避免在云端重复执行本地回归。"
-      ]
-    },
     {
       "note_id": "history-build-17",
       "build_number": 17,
@@ -1004,6 +994,15 @@
       "tag": "build-111-9d08b38",
       "summary": [
         "后台输入的攻击序列结束后等待松键确认，避免确认返回稍晚就误报警；确认超时仍会停止，且不会自动重发技能。"
+      ]
+    },
+    {
+      "note_id": "interrupted-wall-clearance-20261107",
+      "build_number": 113,
+      "commit": "f0bde1ef8a38fafb2c5c17b8293035a0ff84ea79",
+      "tag": "build-113-f0bde1e",
+      "summary": [
+        "修复离墙短移被打断后无法继续、继而重复提示主平台无路线的问题。"
       ]
     }
   ]
