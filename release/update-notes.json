@@ -1,50 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 110,
-    "commit": "d74f72174ae03e45e3e3779b301a7b9fd27ce0a5",
-    "tag": "build-110-d74f721",
-    "exe_sha256": "9f0fa657806678d9bc2c57e9c9474407d3d36e13628d11a5dfcb4f18c7071484"
+    "build_number": 111,
+    "commit": "9d08b38f596f7bc9395e81b7b7b3914ecea1723d",
+    "tag": "build-111-9d08b38",
+    "exe_sha256": "d623b4713abbe972beabf8386a363a0c655ae94a573ef030500ef8f65d599f3b"
   },
-  "history_complete_after_build": 10,
+  "history_complete_after_build": 14,
   "entries": [
-    {
-      "note_id": "history-build-11",
-      "build_number": 11,
-      "commit": "7fa9948cd02e3257f37d3ddd9987af7654fce165",
-      "tag": "build-11-7fa9948",
-      "summary": [
-        "兼容新版客户端步行布局，恢复移动物理读取。"
-      ]
-    },
-    {
-      "note_id": "history-build-12",
-      "build_number": 12,
-      "commit": "b8f976ab86bbb3cc0cdd62aa596148d696e824ba",
-      "tag": "build-12-b8f976a",
-      "summary": [
-        "按地图保存手动缩放和位置，返回地图或重启后恢复视角。"
-      ]
-    },
-    {
-      "note_id": "history-build-13",
-      "build_number": 13,
-      "commit": "7b3706c96bb3da623cb45db61f4d6450ba3036ac",
-      "tag": "build-13-7b3706c",
-      "summary": [
-        "修复客户端更新后移动物理不可用的问题。"
-      ]
-    },
-    {
-      "note_id": "history-build-14",
-      "build_number": 14,
-      "commit": "e512c193889a94141efb73bb2b398f18cc6b917d",
-      "tag": "build-14-e512c19",
-      "summary": [
-        "没有手动记录的新地图默认使用全图移动范围，保留已有自定义范围。",
-        "统一金色掉落图标尺寸。"
-      ]
-    },
     {
       "note_id": "history-build-16",
       "build_number": 16,
@@ -1005,6 +968,42 @@
       "tag": "build-110-d74f721",
       "summary": [
         "开启后台模式时，游戏在前台也会优先响应手动按键，助手松键等待；其他窗口打字仍不影响后台挂机。"
+      ]
+    },
+    {
+      "note_id": "assaulter-chase-hop-20261107",
+      "build_number": 111,
+      "commit": "9d08b38f596f7bc9395e81b7b7b3914ecea1723d",
+      "tag": "build-111-9d08b38",
+      "summary": [
+        "追怪路径前方存在唯一的落叶斩范围内目标，且朝目标位移可缩短到原攻击站位的距离时，单次释放落叶斩加速；结束后从新位置重新寻路。"
+      ]
+    },
+    {
+      "note_id": "assaulter-current-dll-20261106",
+      "build_number": 111,
+      "commit": "9d08b38f596f7bc9395e81b7b7b3914ecea1723d",
+      "tag": "build-111-9d08b38",
+      "summary": [
+        "修复当前客户端中落叶斩被误判为位移语义未验证的问题。"
+      ]
+    },
+    {
+      "note_id": "assaulter-idle-confirm-20261107",
+      "build_number": 111,
+      "commit": "9d08b38f596f7bc9395e81b7b7b3914ecea1723d",
+      "tag": "build-111-9d08b38",
+      "summary": [
+        "若采样没捕获到落叶斩动作，改为依据连续两帧新鲜空闲状态恢复策略，不再固定停等 3 秒。"
+      ]
+    },
+    {
+      "note_id": "attack-sequence-release-ack-20261107",
+      "build_number": 111,
+      "commit": "9d08b38f596f7bc9395e81b7b7b3914ecea1723d",
+      "tag": "build-111-9d08b38",
+      "summary": [
+        "后台输入的攻击序列结束后等待松键确认，避免确认返回稍晚就误报警；确认超时仍会停止，且不会自动重发技能。"
       ]
     }
   ]
