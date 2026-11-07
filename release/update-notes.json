@@ -1,23 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 113,
-    "commit": "f0bde1ef8a38fafb2c5c17b8293035a0ff84ea79",
-    "tag": "build-113-f0bde1e",
-    "exe_sha256": "a91d253554c7ee8e394c6dc5f8e8f050b3ddd2d26fa15e424136bd496b12bc56"
+    "build_number": 114,
+    "commit": "3e5eccd916ef1f1a3a1d3caa331625e72b4cdc49",
+    "tag": "build-114-3e5eccd",
+    "exe_sha256": "bb5640a2f9b176f4141dd6bcb2b2ae1d8e515e12f718a53642318dc8740d9ee9"
   },
-  "history_complete_after_build": 16,
+  "history_complete_after_build": 17,
   "entries": [
-    {
-      "note_id": "history-build-17",
-      "build_number": 17,
-      "commit": "4450bb2ff11633565a47d392217e54f1619ee0e0",
-      "tag": "build-17-4450bb2",
-      "summary": [
-        "新增挂机监控布局，可同时查看运行信息、日志与地图。",
-        "按助手保存布局及日志跟随偏好。"
-      ]
-    },
     {
       "note_id": "history-build-18",
       "build_number": 18,
@@ -1003,6 +993,17 @@
       "tag": "build-113-f0bde1e",
       "summary": [
         "修复离墙短移被打断后无法继续、继而重复提示主平台无路线的问题。"
+      ]
+    },
+    {
+      "note_id": "client-read-compatibility-20261107",
+      "build_number": 114,
+      "commit": "3e5eccd916ef1f1a3a1d3caa331625e72b4cdc49",
+      "tag": "build-114-3e5eccd",
+      "summary": [
+        "补齐 11 月 7 日客户端的移动和箭扫射校验，修复启动预检失败。",
+        "恢复怪物和技能名称映射，补齐掉落特效布局，减少每轮采样重复搜索。",
+        "继续核验完整代码、运行状态和数据一致性，采样有效期保持 250ms。"
       ]
     }
   ]
