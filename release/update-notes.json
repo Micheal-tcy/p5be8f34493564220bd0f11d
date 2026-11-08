@@ -1,22 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 115,
-    "commit": "fcd9d806635dae5b641a8ca773c7458668763f20",
-    "tag": "build-115-fcd9d80",
-    "exe_sha256": "71150ff547a11f7e8e826373c3d7197df0dd743fea587286c30193c26ebe58e4"
+    "build_number": 116,
+    "commit": "4a304bf258c34d184f7622f1cde3d721fe7b6b74",
+    "tag": "build-116-4a304bf",
+    "exe_sha256": "9b3c31e4ed24acc7e96f56b5cd9aec9c35c1ff8d4bc0c5bfac2b4db557274647"
   },
-  "history_complete_after_build": 18,
+  "history_complete_after_build": 19,
   "entries": [
-    {
-      "note_id": "history-build-19",
-      "build_number": 19,
-      "commit": "b76524bfdec394e4795cbe91d68c676825066285",
-      "tag": "build-19-b76524b",
-      "summary": [
-        "适配十月十七日客户端的步行与宠物跟随布局，恢复移动读取。"
-      ]
-    },
     {
       "note_id": "history-build-20",
       "build_number": 20,
@@ -1004,6 +995,16 @@
       "summary": [
         "支持将单独绑定的烈火箭加入弓箭手策略，读取实际等级、射程和弹药条件。",
         "核对首目标和地形射线，按命中点的扩散范围计算最多六个实际候选，持续施放时复核站位和目标。"
+      ]
+    },
+    {
+      "note_id": "walking-compatibility-20261108",
+      "build_number": 116,
+      "commit": "4a304bf258c34d184f7622f1cde3d721fe7b6b74",
+      "tag": "build-116-4a304bf",
+      "summary": [
+        "修复 11 月 8 日客户端无法读取角色步行速度、地面状态和所在平台的问题。",
+        "匹配该版本时直接校验步行和宠物跟随代码，减少重复搜索 DLL 造成的采样延迟。"
       ]
     }
   ]
