@@ -1,31 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 116,
-    "commit": "4a304bf258c34d184f7622f1cde3d721fe7b6b74",
-    "tag": "build-116-4a304bf",
-    "exe_sha256": "9b3c31e4ed24acc7e96f56b5cd9aec9c35c1ff8d4bc0c5bfac2b4db557274647"
+    "build_number": 120,
+    "commit": "516551816598ccb6d4899969119449fec270844e",
+    "tag": "build-120-5165518",
+    "exe_sha256": "450d79ac203b61af35f21f2731d8c2e7825e0264d57aa56c5487c1d52bc719ba"
   },
-  "history_complete_after_build": 19,
+  "history_complete_after_build": 21,
   "entries": [
-    {
-      "note_id": "history-build-20",
-      "build_number": 20,
-      "commit": "457ab8efc685f1c01e54611526bb2ba966ff6677",
-      "tag": "build-20-457ab8e",
-      "summary": [
-        "修复连续起伏地形接缝处误判离开路线，减少移动反复启停。"
-      ]
-    },
-    {
-      "note_id": "history-build-21",
-      "build_number": 21,
-      "commit": "029d9fb98161ba9c119bd98ae606f7901c01f068",
-      "tag": "build-21-029d9fb",
-      "summary": [
-        "每条技能的攻击范围显示开关随策略保存，切换或重启后保留。"
-      ]
-    },
     {
       "note_id": "history-build-22",
       "build_number": 22,
@@ -1005,6 +987,26 @@
       "summary": [
         "修复 11 月 8 日客户端无法读取角色步行速度、地面状态和所在平台的问题。",
         "匹配该版本时直接校验步行和宠物跟随代码，减少重复搜索 DLL 造成的采样延迟。"
+      ]
+    },
+    {
+      "note_id": "cleanse-consume-bow-20261108",
+      "build_number": 120,
+      "commit": "516551816598ccb6d4899969119449fec270844e",
+      "tag": "build-120-5165518",
+      "summary": [
+        "新增随 Buff 预设保存的自动解除异常，默认关闭。虚弱、封印和黑暗可用万能疗伤药处理，方向反转时松键等待恢复。",
+        "恢复杯炒年糕等新版消耗品的增益识别。本版也收录 11 月 8 日客户端 DLL 读取适配和宠物 HP／MP 药水低库存报警。",
+        "修复弓手在斜坡等地形反复等待射击站位的问题，复核另一朝向的路线，并在高优先级路线待定时保留已确认可命中的射击。"
+      ]
+    },
+    {
+      "note_id": "puppet-attack-wait-reasons",
+      "build_number": 120,
+      "commit": "516551816598ccb6d4899969119449fec270844e",
+      "tag": "build-120-5165518",
+      "summary": [
+        "修复替身术已生效时覆盖攻击等待原因的问题。空白名单或锁定的远征目标缺少身体范围时，显示对应的等待提示。"
       ]
     }
   ]
