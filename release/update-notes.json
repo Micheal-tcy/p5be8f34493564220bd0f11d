@@ -1,22 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 120,
-    "commit": "516551816598ccb6d4899969119449fec270844e",
-    "tag": "build-120-5165518",
-    "exe_sha256": "450d79ac203b61af35f21f2731d8c2e7825e0264d57aa56c5487c1d52bc719ba"
+    "build_number": 121,
+    "commit": "71a27e9aeb4d713204db724e3bd3ff9fadd9b884",
+    "tag": "build-121-71a27e9",
+    "exe_sha256": "e2d903736b83573d6e1c2810093e7744cf7bf882b26563a8c982298e74f67048"
   },
-  "history_complete_after_build": 21,
+  "history_complete_after_build": 22,
   "entries": [
-    {
-      "note_id": "history-build-22",
-      "build_number": 22,
-      "commit": "4d4b1654c4287962198e8a55d4ff459cd5debc99",
-      "tag": "build-22-4d4b165",
-      "summary": [
-        "更新下载采用 Windows 系统代理，显示下载进度、阶段和超时状态。"
-      ]
-    },
     {
       "note_id": "history-build-23",
       "build_number": 23,
@@ -1007,6 +998,15 @@
       "tag": "build-120-5165518",
       "summary": [
         "修复替身术已生效时覆盖攻击等待原因的问题。空白名单或锁定的远征目标缺少身体范围时，显示对应的等待提示。"
+      ]
+    },
+    {
+      "note_id": "arrow-rain-landing-resume",
+      "build_number": 121,
+      "commit": "71a27e9aeb4d713204db724e3bd3ff9fadd9b884",
+      "tag": "build-121-71a27e9",
+      "summary": [
+        "箭雨施放中短暂离地后，落地且动作与目标条件就绪时可立即续攻，省去额外等待一次采样。"
       ]
     }
   ]
