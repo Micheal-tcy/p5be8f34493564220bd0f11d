@@ -1,70 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 122,
-    "commit": "02f0898b325a15351f96e1d04b1ed64a7d51a9ca",
-    "tag": "build-122-02f0898",
-    "exe_sha256": "d031e5191238f6ad2856f1c0d276c37987c4558ac23dd1136af59b5ddd1aff6c"
+    "build_number": 124,
+    "commit": "f171fc66932b5c255b024b8ef45f8096043c7acd",
+    "tag": "build-124-f171fc6",
+    "exe_sha256": "5695cf9b194484b38198817140679095cd83776aa6be1e45602474b39cb6f943"
   },
-  "history_complete_after_build": 23,
+  "history_complete_after_build": 29,
   "entries": [
-    {
-      "note_id": "history-build-24",
-      "build_number": 24,
-      "commit": "d4fcaf61c6a243303260ef9dda5f1bfd101d1e11",
-      "tag": "build-24-d4fcaf6",
-      "summary": [
-        "地图默认白名单补齐怪物死亡分裂、复活和转换后的形态。"
-      ]
-    },
-    {
-      "note_id": "history-build-25",
-      "build_number": 25,
-      "commit": "cebe51a4d4c53643f95d4666d5a255c47237d67c",
-      "tag": "build-25-cebe51a",
-      "summary": [
-        "改善前台切换并增加切换失败提醒，无关键位冲突不再阻止可用技能。",
-        "修复部分重叠短平台无法归位的问题。"
-      ]
-    },
-    {
-      "note_id": "history-build-26",
-      "build_number": 26,
-      "commit": "71206f86e2ac4f440021246472df0a77d7233f33",
-      "tag": "build-26-71206f8",
-      "summary": [
-        "地图可显示其他玩家的职业和等级，并保存显示开关。",
-        "对明显异常的等级标为未取得，保留可信职业信息。"
-      ]
-    },
-    {
-      "note_id": "history-build-27",
-      "build_number": 27,
-      "commit": "70b29a061d3ceeab4a5c85b45ba9882ad7ff5182",
-      "tag": "build-27-70b29a0",
-      "summary": [
-        "适配新版客户端步行布局，改善共享目录保存及前后台输入衔接。"
-      ]
-    },
-    {
-      "note_id": "history-build-28",
-      "build_number": 28,
-      "commit": "23435807cee93287380861d23f06b8175b502600",
-      "tag": "build-28-2343580",
-      "summary": [
-        "修复无关按键残留导致启停快捷键无法触发的问题。",
-        "适配十月十九日晚版客户端步行布局。"
-      ]
-    },
-    {
-      "note_id": "history-build-29",
-      "build_number": 29,
-      "commit": "23435807cee93287380861d23f06b8175b502600",
-      "tag": "build-29-2343580",
-      "summary": [
-        "与构建 28 使用相同源码，重新打包发布。"
-      ]
-    },
     {
       "note_id": "history-build-30",
       "build_number": 30,
@@ -1007,6 +950,65 @@
       "summary": [
         "适配 11 月 9 日 NewMaple 客户端的步行、宠物跟随和技能读取，涵盖弓系选敌、烈火箭和落叶斩。",
         "同步适配名称和地图资源、掉落特效、Buff 图标和游戏小地图的读取。"
+      ]
+    },
+    {
+      "note_id": "fast-return-first-20261109",
+      "build_number": 124,
+      "commit": "f171fc66932b5c255b024b8ef45f8096043c7acd",
+      "tag": "build-124-f171fc6",
+      "summary": [
+        "回位优先复核成功的起跳方式或当前位置的直接跳跃，未成功后再完整规划，减少起步等待；OGL 与 DX12 通用。",
+        "连续三次跳跃未归位才计一次回位失败，落地后重新检测再尝试，重复采样和规划等待不增加跳跃次数。"
+      ]
+    },
+    {
+      "note_id": "monitor-exp-rates-20261109",
+      "build_number": 124,
+      "commit": "f171fc66932b5c255b024b8ef45f8096043c7acd",
+      "tag": "build-124-f171fc6",
+      "summary": [
+        "挂机监控顶部可单独开启经验记录。每约 2 秒记录一次，显示近 60 秒实时效率和本次总效率，可随时切换每分钟或每小时。",
+        "效率和累计经验按千分位或“万／亿”显示，悬停可查看未缩写的数字。",
+        "开关与挂机独立；停止记录保留结果，再开启开始新记录。调整预览布局，优先显示角色状态、宠物药量和运行控制。"
+      ]
+    },
+    {
+      "note_id": "monitor-pet-potion-stock-20261109",
+      "build_number": 124,
+      "commit": "f171fc66932b5c255b024b8ef45f8096043c7acd",
+      "tag": "build-124-f171fc6",
+      "summary": [
+        "挂机监控在角色 HP／MP 下方显示宠物自动补血和补蓝药水的剩余数量，无需开启低库存报警。"
+      ]
+    },
+    {
+      "note_id": "preferred-return-area-handoff-20261109",
+      "build_number": 124,
+      "commit": "f171fc66932b5c255b024b8ef45f8096043c7acd",
+      "tag": "build-124-f171fc6",
+      "summary": [
+        "修复刚走进移动范围就提前中断回位步行、在边缘反复找不到主平台路线并停机的问题。先走到原回位点并确认站稳，再验证通往主平台的路线。"
+      ]
+    },
+    {
+      "note_id": "return-combat-intent-20261109",
+      "build_number": 124,
+      "commit": "f171fc66932b5c255b024b8ef45f8096043c7acd",
+      "tag": "build-124-f171fc6",
+      "summary": [
+        "OGL 与 DX12 共用：优先沿顺路的寻怪站位移动，能顺带回位时衔接已开启的无双矛／分身术跳攻；没有合适动作就直接回位，不在原平台停住清怪。",
+        "连续三次跳跃落地后没有回位进展才计一轮失败；落到更接近目标的平台或位置即清零连续次数，采样等待和未发出的跳跃不计失败。"
+      ]
+    },
+    {
+      "note_id": "return-jump-attack-order-20261109",
+      "build_number": 124,
+      "commit": "f171fc66932b5c255b024b8ef45f8096043c7acd",
+      "tag": "build-124-f171fc6",
+      "summary": [
+        "修复顺路跳攻回位时先触发地面攻击、没有真正起跳，随后原地等待并反复重试的问题；OGL 与 DX12 通用。",
+        "跳攻沿用无双矛的跳跃键优先规则，方向持续保持；后台输入也保留指定顺序，兼容 Alt／空格跳跃与 Shift 攻击的组合。"
       ]
     }
   ]
