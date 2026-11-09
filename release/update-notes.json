@@ -1,33 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 125,
-    "commit": "45df1c4ab29383b3842c871e944126301b4cbd28",
-    "tag": "build-125-45df1c4",
-    "exe_sha256": "1672ead989f9b49e995826193f387401ba2f2ed3707a4a58af2ab3210ddcefc0"
+    "build_number": 126,
+    "commit": "2a92945eec64bf393e972e9ec94d5dd856063d8c",
+    "tag": "build-126-2a92945",
+    "exe_sha256": "3665778d993231fd60d904b7eeb95f5786230ebe43033701d3bbd4fe1f0c76d9"
   },
-  "history_complete_after_build": 30,
+  "history_complete_after_build": 32,
   "entries": [
-    {
-      "note_id": "history-build-31",
-      "build_number": 31,
-      "commit": "d414a41f1ca075d3cb273ddc5b221aeddc4efa6d",
-      "tag": "build-31-d414a41",
-      "summary": [
-        "地图导航支持预烘焙和持久缓存，减少启动和恢复时重复准备。",
-        "改善跨层选路与本地源码更新流程。"
-      ]
-    },
-    {
-      "note_id": "history-build-32",
-      "build_number": 32,
-      "commit": "e240f1d1552f8151355c504edacf4ed7afb2c4d3",
-      "tag": "build-32-e240f1d",
-      "summary": [
-        "增益识别可单独选择自身图标来源，增加分身术近距离跳攻选项。",
-        "整合新增导航功能，同时保留现有移动保护和缓存。"
-      ]
-    },
     {
       "note_id": "history-build-33",
       "build_number": 33,
@@ -1009,6 +989,27 @@
       "summary": [
         "开启群攻优先站位与近身跳攻时，达到群攻所需的近身目标数量后沿原方向衔接跳攻，减少回位后短距离走停、再站定攻击的现象；OGL 与 DX12 通用。",
         "原群攻目标数、怪物白名单、移动范围与完整跳跃安全检查继续生效，无法安全起跳时沿用已验证的步行补位。"
+      ]
+    },
+    {
+      "note_id": "remove-auto-buff-cancel-20261109",
+      "build_number": 126,
+      "commit": "2a92945eec64bf393e972e9ec94d5dd856063d8c",
+      "tag": "build-126-2a92945",
+      "summary": [
+        "助手不再为了取消 Buff 切换游戏到前台或右键点击图标；旧预设的自动取消名单不再生效。",
+        "自动补充中的“允许取消自身 Buff”继续按技能设置。手动取消已确认的效果后，仍按原定时间补放。",
+        "减小助手体积：内置战斗和导航脚本各保存一份，提示音和后台组件改用无损压缩。"
+      ]
+    },
+    {
+      "note_id": "standalone-v8-runtime-20261109",
+      "build_number": 126,
+      "commit": "2a92945eec64bf393e972e9ec94d5dd856063d8c",
+      "tag": "build-126-2a92945",
+      "summary": [
+        "首次启动挂机时自动准备引擎，只查看地图或监控无需下载。准备期间可停止，下载失败可重试。",
+        "更新助手会复用本机兼容引擎；已准备好的引擎可离线使用。"
       ]
     }
   ]

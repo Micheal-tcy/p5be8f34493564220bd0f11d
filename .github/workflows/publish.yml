@@ -27,10 +27,16 @@ jobs:
       executable_hash: ${{ steps.validate.outputs.executable_hash }}
       manifest_hash: ${{ steps.validate.outputs.manifest_hash }}
       notes_hash: ${{ steps.validate.outputs.notes_hash }}
+      engine_pin: ${{ steps.engine.outputs.pin }}
+      engine_action: ${{ steps.engine.outputs.action }}
+      engine_dll_hash: ${{ steps.engine.outputs.dll_hash }}
     steps:
       - uses: actions/checkout@v5
         with:
           persist-credentials: false
+          sparse-checkout: |
+            release
+            .github/scripts
       - name: Validate package
         id: validate
         run: |
@@ -182,6 +188,33 @@ jobs:
           "notes_hash=$((Get-FileHash -LiteralPath release/update-notes.json -Algorithm SHA256).Hash.ToLowerInvariant())" >> $env:GITHUB_OUTPUT
           # END standalone update-notes validation
 
+      - name: Validate the engine pinned by the submitted EXE
+        id: engine
+        run: |
+          $ErrorActionPreference = 'Stop'
+          . ./.github/scripts/engine-release.ps1
+          $exe = (Resolve-Path -LiteralPath 'release/maple-helper.exe').Path
+          $identity = Read-MapleEngineBuildInfo $exe (Join-Path $env:RUNNER_TEMP 'engine-identity')
+          $pin = $identity.engine_manifest_sha256
+          if ($identity.engine_compatibility -cne $script:MapleEngineId -or $pin -cnotmatch '^[0-9a-f]{64}$') { throw 'EXE has no valid engine identity.' }
+          $release = Get-MapleEngineRelease
+          $planned = @(git log -1 '--format=%(trailers:key=Engine-Action,valueonly)' HEAD | Where-Object { $_ })
+          if ($LASTEXITCODE -ne 0 -or $planned.Count -ne 1 -or $planned[0] -cnotin @('create','reuse')) { throw 'Package commit must identify whether its engine was already published.' }
+          $action = Resolve-MapleEnginePublication $planned[0] $release
+          if ($action -ceq 'create') {
+            $pair = "engine/$script:MapleEngineId"
+            git sparse-checkout add $pair
+            if ($LASTEXITCODE -ne 0) { throw 'Cannot check out the new engine candidate.' }
+            Read-MapleEnginePair $pair $pin | Out-Null
+          } else {
+            $pair = Join-Path $env:RUNNER_TEMP 'existing-engine'
+            Receive-MapleEnginePair $pair $release $pin | Out-Null
+          }
+          Invoke-MapleEngineSmoke $exe $pair $pin (Join-Path $env:RUNNER_TEMP 'smoke-engine-profile')
+          "pin=$pin" >> $env:GITHUB_OUTPUT
+          "action=$action" >> $env:GITHUB_OUTPUT
+          "dll_hash=$(Get-MapleFileSha (Join-Path $pair 'maple-v8.dll'))" >> $env:GITHUB_OUTPUT
+
       - name: Isolated startup and normal shutdown
         run: |
           $ErrorActionPreference = 'Stop'
@@ -276,15 +309,41 @@ jobs:
       - uses: actions/checkout@v5
         with:
           persist-credentials: false
+          sparse-checkout: |
+            release
+            .github/scripts
+      - name: Publish the compatible engine once and verify anonymous reads
+        if: needs.verify.outputs.engine_action == 'create'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_PIN: ${{ needs.verify.outputs.engine_pin }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          . ./.github/scripts/engine-release.ps1
+          git sparse-checkout add "engine/$script:MapleEngineId"
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot check out the verified new engine.' }
+          Publish-MapleEngineOnce $env:GITHUB_REPOSITORY $env:GITHUB_SHA "engine/$script:MapleEngineId" $env:EXPECTED_PIN (Join-Path $env:RUNNER_TEMP 'published-engine')
+      - name: Confirm unchanged engine (read only)
+        if: needs.verify.outputs.engine_action == 'reuse'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_PIN: ${{ needs.verify.outputs.engine_pin }}
+          DLL_HASH: ${{ needs.verify.outputs.engine_dll_hash }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          . ./.github/scripts/engine-release.ps1
+          Assert-MaplePublishedEngine (Get-MapleEngineRelease) $env:EXPECTED_PIN $env:DLL_HASH (Join-Path $env:RUNNER_TEMP 'recheck-engine')
       - name: Publish immutable package identity
         env:
           GH_TOKEN: ${{ github.token }}
           EXPECTED_EXE_HASH: ${{ needs.verify.outputs.executable_hash }}
           EXPECTED_MANIFEST_HASH: ${{ needs.verify.outputs.manifest_hash }}
           EXPECTED_NOTES_HASH: ${{ needs.verify.outputs.notes_hash }}
+          ENGINE_ACTION: ${{ needs.verify.outputs.engine_action }}
         run: |
           $ErrorActionPreference = 'Stop'
           Set-StrictMode -Version Latest
+          if ($env:ENGINE_ACTION -cnotin @('create','reuse')) { throw 'Engine verification did not produce a release decision.' }
           $PSNativeCommandUseErrorActionPreference = $false
           if ((Get-FileHash -LiteralPath release/maple-helper.exe -Algorithm SHA256).Hash -ine $env:EXPECTED_EXE_HASH -or (Get-FileHash -LiteralPath release/update-manifest.json -Algorithm SHA256).Hash -ine $env:EXPECTED_MANIFEST_HASH) { throw 'Verified package identity changed.' }
           if ((Get-FileHash -LiteralPath release/update-notes.json -Algorithm SHA256).Hash -ine $env:EXPECTED_NOTES_HASH) { throw 'Verified notes identity changed.' }
@@ -297,7 +356,8 @@ jobs:
           $existing = gh release view $manifest.tag --repo $env:GITHUB_REPOSITORY --json tagName 2>$null
           if ($LASTEXITCODE -eq 0) { throw 'This tag already exists. Assets are never overwritten; use a new build number.' }
           $latestFlag = '--latest'
-          if ($releases.Count -gt 0) {
+          $stable = @($releases | Where-Object { -not $_.isDraft -and -not $_.isPrerelease })
+          if ($stable.Count -gt 0) {
             $latestJson = gh release view --repo $env:GITHUB_REPOSITORY --json tagName 2>$null
             if ($LASTEXITCODE -ne 0) { throw 'Cannot establish the current latest build safely.' }
             $latestTag = ($latestJson | ConvertFrom-Json).tagName

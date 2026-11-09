@@ -3,4 +3,6 @@
 release/maple-helper.exe -text
 release/update-manifest.json -text
 release/update-notes.json -text
+engine/*/maple-v8.dll -text
+engine/*/engine-manifest.json -text
 # END maple-helper release asset bytes
