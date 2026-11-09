@@ -1,23 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 126,
-    "commit": "2a92945eec64bf393e972e9ec94d5dd856063d8c",
-    "tag": "build-126-2a92945",
-    "exe_sha256": "3665778d993231fd60d904b7eeb95f5786230ebe43033701d3bbd4fe1f0c76d9"
+    "build_number": 127,
+    "commit": "ca098ac176c84c5f2d5c45152bcdff62bc1f9ea4",
+    "tag": "build-127-ca098ac",
+    "exe_sha256": "2e8de9cdef3c39b2eb294fbf2139835c42387e062d16a9cb0ca8aa5a84056413"
   },
-  "history_complete_after_build": 32,
+  "history_complete_after_build": 33,
   "entries": [
-    {
-      "note_id": "history-build-33",
-      "build_number": 33,
-      "commit": "5d08385519e858f223b803529518717cb5fec6c9",
-      "tag": "build-33-5d08385",
-      "summary": [
-        "改善连续移动、落地后衔接和绳梯对位，增加受阻后的有限恢复。",
-        "跨层移动与自动拾取统一遵守配置范围。"
-      ]
-    },
     {
       "note_id": "history-build-34",
       "build_number": 34,
@@ -1010,6 +1000,16 @@
       "summary": [
         "首次启动挂机时自动准备引擎，只查看地图或监控无需下载。准备期间可停止，下载失败可重试。",
         "更新助手会复用本机兼容引擎；已准备好的引擎可离线使用。"
+      ]
+    },
+    {
+      "note_id": "client-compat-20261109-late",
+      "build_number": 127,
+      "commit": "ca098ac176c84c5f2d5c45152bcdff62bc1f9ea4",
+      "tag": "build-127-ca098ac",
+      "summary": [
+        "恢复怪物名称和地图布局读取，解决实时采样正常但启动预检仍提示缺少地图布局的问题。",
+        "恢复移动物理、箭扫射和烈火箭的客户端判定，同时适配 Buff 图标和掉落特效读取。"
       ]
     }
   ]
