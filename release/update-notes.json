@@ -1,23 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 121,
-    "commit": "71a27e9aeb4d713204db724e3bd3ff9fadd9b884",
-    "tag": "build-121-71a27e9",
-    "exe_sha256": "e2d903736b83573d6e1c2810093e7744cf7bf882b26563a8c982298e74f67048"
+    "build_number": 122,
+    "commit": "02f0898b325a15351f96e1d04b1ed64a7d51a9ca",
+    "tag": "build-122-02f0898",
+    "exe_sha256": "d031e5191238f6ad2856f1c0d276c37987c4558ac23dd1136af59b5ddd1aff6c"
   },
-  "history_complete_after_build": 22,
+  "history_complete_after_build": 23,
   "entries": [
-    {
-      "note_id": "history-build-23",
-      "build_number": 23,
-      "commit": "9664883788538a31c9ed50974719b73c7be63fc8",
-      "tag": "build-23-9664883",
-      "summary": [
-        "攻击白名单按地图保存，新地图自动载入默认怪物。",
-        "新增全图持续无新增怪物报警。"
-      ]
-    },
     {
       "note_id": "history-build-24",
       "build_number": 24,
@@ -1007,6 +997,16 @@
       "tag": "build-121-71a27e9",
       "summary": [
         "箭雨施放中短暂离地后，落地且动作与目标条件就绪时可立即续攻，省去额外等待一次采样。"
+      ]
+    },
+    {
+      "note_id": "client-compat-20261109",
+      "build_number": 122,
+      "commit": "02f0898b325a15351f96e1d04b1ed64a7d51a9ca",
+      "tag": "build-122-02f0898",
+      "summary": [
+        "适配 11 月 9 日 NewMaple 客户端的步行、宠物跟随和技能读取，涵盖弓系选敌、烈火箭和落叶斩。",
+        "同步适配名称和地图资源、掉落特效、Buff 图标和游戏小地图的读取。"
       ]
     }
   ]
