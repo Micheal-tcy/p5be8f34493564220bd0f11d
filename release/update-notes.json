@@ -1,23 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 124,
-    "commit": "f171fc66932b5c255b024b8ef45f8096043c7acd",
-    "tag": "build-124-f171fc6",
-    "exe_sha256": "5695cf9b194484b38198817140679095cd83776aa6be1e45602474b39cb6f943"
+    "build_number": 125,
+    "commit": "45df1c4ab29383b3842c871e944126301b4cbd28",
+    "tag": "build-125-45df1c4",
+    "exe_sha256": "1672ead989f9b49e995826193f387401ba2f2ed3707a4a58af2ab3210ddcefc0"
   },
-  "history_complete_after_build": 29,
+  "history_complete_after_build": 30,
   "entries": [
-    {
-      "note_id": "history-build-30",
-      "build_number": 30,
-      "commit": "25e6ee4d07432d917587eb22afab61067f7de925",
-      "tag": "build-30-25e6ee4",
-      "summary": [
-        "完善台阶和绳梯导航，新增平台停留超时后换层选项。",
-        "增加复用现有配置的本地源码启动入口。"
-      ]
-    },
     {
       "note_id": "history-build-31",
       "build_number": 31,
@@ -1009,6 +999,16 @@
       "summary": [
         "修复顺路跳攻回位时先触发地面攻击、没有真正起跳，随后原地等待并反复重试的问题；OGL 与 DX12 通用。",
         "跳攻沿用无双矛的跳跃键优先规则，方向持续保持；后台输入也保留指定顺序，兼容 Alt／空格跳跃与 Shift 攻击的组合。"
+      ]
+    },
+    {
+      "note_id": "group-position-jump-handoff-20261109",
+      "build_number": 125,
+      "commit": "45df1c4ab29383b3842c871e944126301b4cbd28",
+      "tag": "build-125-45df1c4",
+      "summary": [
+        "开启群攻优先站位与近身跳攻时，达到群攻所需的近身目标数量后沿原方向衔接跳攻，减少回位后短距离走停、再站定攻击的现象；OGL 与 DX12 通用。",
+        "原群攻目标数、怪物白名单、移动范围与完整跳跃安全检查继续生效，无法安全起跳时沿用已验证的步行补位。"
       ]
     }
   ]
