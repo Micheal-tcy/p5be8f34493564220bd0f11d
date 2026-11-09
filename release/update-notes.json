@@ -1,22 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 127,
-    "commit": "ca098ac176c84c5f2d5c45152bcdff62bc1f9ea4",
-    "tag": "build-127-ca098ac",
-    "exe_sha256": "2e8de9cdef3c39b2eb294fbf2139835c42387e062d16a9cb0ca8aa5a84056413"
+    "build_number": 128,
+    "commit": "ab5de728440dae91f2822a4eec0eacc7bab48c8d",
+    "tag": "build-128-ab5de72",
+    "exe_sha256": "8a6f9cf0643758794e2ef19d8f7c93475eb68bf23e41186c3136ca024aa3820c"
   },
-  "history_complete_after_build": 33,
+  "history_complete_after_build": 34,
   "entries": [
-    {
-      "note_id": "history-build-34",
-      "build_number": 34,
-      "commit": "09072c12f6bd25ac0edbfd891c9117e0736a2dd2",
-      "tag": "build-34-09072c1",
-      "summary": [
-        "兼容新版客户端移动模块，名称读取失败不再阻断地图地形显示。"
-      ]
-    },
     {
       "note_id": "history-build-35",
       "build_number": 35,
@@ -1010,6 +1001,16 @@
       "summary": [
         "恢复怪物名称和地图布局读取，解决实时采样正常但启动预检仍提示缺少地图布局的问题。",
         "恢复移动物理、箭扫射和烈火箭的客户端判定，同时适配 Buff 图标和掉落特效读取。"
+      ]
+    },
+    {
+      "note_id": "nov9-late-skill-labels",
+      "build_number": 128,
+      "commit": "ab5de728440dae91f2822a4eec0eacc7bab48c8d",
+      "tag": "build-128-ab5de72",
+      "summary": [
+        "修复登录后键位、宏和自身 Buff 偶尔只显示技能编号的问题。刚进入地图时暂缺的技能名会在后台补齐。",
+        "恢复晚版客户端的落叶斩判定，并修复安装物品、现金道具在掉落名单中的名称读取。"
       ]
     }
   ]
