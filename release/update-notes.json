@@ -1,23 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 128,
-    "commit": "ab5de728440dae91f2822a4eec0eacc7bab48c8d",
-    "tag": "build-128-ab5de72",
-    "exe_sha256": "8a6f9cf0643758794e2ef19d8f7c93475eb68bf23e41186c3136ca024aa3820c"
+    "build_number": 129,
+    "commit": "c91967b23c34893a9615d539319783cac49c8d87",
+    "tag": "build-129-c91967b",
+    "exe_sha256": "d97dcb65d9fa97989742281454930805539c26e80a42b2f95b8c601907e40b90"
   },
-  "history_complete_after_build": 34,
+  "history_complete_after_build": 35,
   "entries": [
-    {
-      "note_id": "history-build-35",
-      "build_number": 35,
-      "commit": "317eedff9d633bc11a896de4625fc4f95d064e8e",
-      "tag": "build-35-317eedf",
-      "summary": [
-        "恢复新版客户端中的地图、怪物、掉落及消耗品名称显示。",
-        "减少本地源码启动和更新后的重复编译等待。"
-      ]
-    },
     {
       "note_id": "history-build-36",
       "build_number": 36,
@@ -1011,6 +1001,15 @@
       "summary": [
         "修复登录后键位、宏和自身 Buff 偶尔只显示技能编号的问题。刚进入地图时暂缺的技能名会在后台补齐。",
         "恢复晚版客户端的落叶斩判定，并修复安装物品、现金道具在掉落名单中的名称读取。"
+      ]
+    },
+    {
+      "note_id": "alarm-stop-reason-20261110",
+      "build_number": 129,
+      "commit": "c91967b23c34893a9615d539319783cac49c8d87",
+      "tag": "build-129-c91967b",
+      "summary": [
+        "报警停机后，“挂机信息”直接显示具体原因。手动消音或倒计时结束后仍可查看；再次启动时恢复显示本次运行状态。"
       ]
     }
   ]
