@@ -1,22 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 131,
-    "commit": "9f41fb767fca8f973b0f0839886082d739beb128",
-    "tag": "build-131-9f41fb7",
-    "exe_sha256": "ff4d6f19000ad9fcf97864c064b3d146ab1fe87224767460bb1a78a5f8ce993e"
+    "build_number": 133,
+    "commit": "000523bb967da230a260f46e3ec1e1cf735fe01b",
+    "tag": "build-133-000523b",
+    "exe_sha256": "5c3ea4dae32bed62306527a7b2d213ac4106b603a353c105d9a71959d3389cae"
   },
-  "history_complete_after_build": 38,
+  "history_complete_after_build": 39,
   "entries": [
-    {
-      "note_id": "history-build-39",
-      "build_number": 39,
-      "commit": "baee1e0028901c17867aacc5863e23eca1b01cec",
-      "tag": "build-39-baee1e0",
-      "summary": [
-        "补全攻击药丸和龙血的自动补充说明与回归验证，沿用原有通用药剂入口。"
-      ]
-    },
     {
       "note_id": "history-build-40",
       "build_number": 40,
@@ -1011,6 +1002,15 @@
       "summary": [
         "适配新版客户端的怪物名称、地图布局和步行读取，更新箭扫射启动预检所需的选敌与地形遮挡校验。",
         "同步适配宠物跟随、烈火箭、落叶斩、游戏内小地图、Buff 图标和金色掉落的读取。"
+      ]
+    },
+    {
+      "note_id": "dll-nov11-late-20261111",
+      "build_number": 133,
+      "commit": "000523bb967da230a260f46e3ec1e1cf735fe01b",
+      "tag": "build-133-000523b",
+      "summary": [
+        "恢复新版客户端移动物理、地图名称与布局、Buff、掉落和攻击技能读取。"
       ]
     }
   ]
