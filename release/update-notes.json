@@ -1,23 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 130,
-    "commit": "61d82d342a3a89dcf32f5602ce664be81cea5edf",
-    "tag": "build-130-61d82d3",
-    "exe_sha256": "a86aa772495354d756ea8d9e8a0ec45522cebdbf6f8b7977b3e4e797233b27e8"
+    "build_number": 131,
+    "commit": "9f41fb767fca8f973b0f0839886082d739beb128",
+    "tag": "build-131-9f41fb7",
+    "exe_sha256": "ff4d6f19000ad9fcf97864c064b3d146ab1fe87224767460bb1a78a5f8ce993e"
   },
-  "history_complete_after_build": 37,
+  "history_complete_after_build": 38,
   "entries": [
-    {
-      "note_id": "history-build-38",
-      "build_number": 38,
-      "commit": "22442f3703a924a944898932c5a05752919f29ff",
-      "tag": "build-38-22442f3",
-      "summary": [
-        "改善跨层选路与悬空绳抓取，按怪物数量和路线耗时选择平台。",
-        "减少巡逻立即往返及抓绳失败后的重复尝试。"
-      ]
-    },
     {
       "note_id": "history-build-39",
       "build_number": 39,
@@ -1011,6 +1001,16 @@
       "summary": [
         "远征模式中，场内任一活怪反伤生效即停手；状态解除并确认落地后重新决策，OGL 与 DX12 通用。",
         "怪物详情显示反伤状态；读取未知时保持停手，不重放被中断的攻击或跳跃。"
+      ]
+    },
+    {
+      "note_id": "client-compat-20261111",
+      "build_number": 131,
+      "commit": "9f41fb767fca8f973b0f0839886082d739beb128",
+      "tag": "build-131-9f41fb7",
+      "summary": [
+        "适配新版客户端的怪物名称、地图布局和步行读取，更新箭扫射启动预检所需的选敌与地形遮挡校验。",
+        "同步适配宠物跟随、烈火箭、落叶斩、游戏内小地图、Buff 图标和金色掉落的读取。"
       ]
     }
   ]
