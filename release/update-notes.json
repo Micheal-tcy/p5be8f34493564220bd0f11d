@@ -1,23 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 133,
-    "commit": "000523bb967da230a260f46e3ec1e1cf735fe01b",
-    "tag": "build-133-000523b",
-    "exe_sha256": "5c3ea4dae32bed62306527a7b2d213ac4106b603a353c105d9a71959d3389cae"
+    "build_number": 138,
+    "commit": "25ff507415ae31c2647e22320a021b0291eec3ec",
+    "tag": "build-138-25ff507",
+    "exe_sha256": "3273821760415bb9848740deb85cf2439e2bc070a23db65626c76284557284d3"
   },
-  "history_complete_after_build": 39,
+  "history_complete_after_build": 40,
   "entries": [
-    {
-      "note_id": "history-build-40",
-      "build_number": 40,
-      "commit": "9a5a0859777d8357c4e4c4a3435aba79e33d15e9",
-      "tag": "build-40-9a5a085",
-      "summary": [
-        "恢复新版地图的怪物列表、底图和默认全图移动范围。",
-        "修复绳底归轴时错误判定转场越界而停止的问题。"
-      ]
-    },
     {
       "note_id": "history-build-41",
       "build_number": 41,
@@ -1011,6 +1001,16 @@
       "tag": "build-133-000523b",
       "summary": [
         "恢复新版客户端移动物理、地图名称与布局、Buff、掉落和攻击技能读取。"
+      ]
+    },
+    {
+      "note_id": "dll-compat-20261112",
+      "build_number": 138,
+      "commit": "25ff507415ae31c2647e22320a021b0291eec3ec",
+      "tag": "build-138-25ff507",
+      "summary": [
+        "适配新版客户端的地图与名称、步行与宠物位置、自身 Buff 图标和金色掉落特效读取。",
+        "更新游戏内小地图原点、弓系目标、烈火箭及落叶斩的版本识别。"
       ]
     }
   ]
