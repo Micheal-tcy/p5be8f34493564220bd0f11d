@@ -1,23 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 138,
-    "commit": "25ff507415ae31c2647e22320a021b0291eec3ec",
-    "tag": "build-138-25ff507",
-    "exe_sha256": "3273821760415bb9848740deb85cf2439e2bc070a23db65626c76284557284d3"
+    "build_number": 139,
+    "commit": "579bbc9798cbffc3a7084d6f327851d09dec1a69",
+    "tag": "build-139-579bbc9",
+    "exe_sha256": "bec3f26943ee8e36757c3248e614c662198e4eeda1eb195cdff27b3370ba54c2"
   },
-  "history_complete_after_build": 40,
+  "history_complete_after_build": 41,
   "entries": [
-    {
-      "note_id": "history-build-41",
-      "build_number": 41,
-      "commit": "546ef4f585d7e1868c9a343b47a52a198f60368e",
-      "tag": "build-41-546ef4f",
-      "summary": [
-        "补齐船长一至三转攻击与增益技能，支持导航标记和召唤维护。",
-        "可用枪系技能支持经过近身条件验证的跳射。"
-      ]
-    },
     {
       "note_id": "history-build-42",
       "build_number": 42,
@@ -1011,6 +1001,16 @@
       "summary": [
         "适配新版客户端的地图与名称、步行与宠物位置、自身 Buff 图标和金色掉落特效读取。",
         "更新游戏内小地图原点、弓系目标、烈火箭及落叶斩的版本识别。"
+      ]
+    },
+    {
+      "note_id": "dll-compat-20261113",
+      "build_number": 139,
+      "commit": "579bbc9798cbffc3a7084d6f327851d09dec1a69",
+      "tag": "build-139-579bbc9",
+      "summary": [
+        "适配新版客户端的名称、地图和步行读取，并更新箭扫射启动预检的选敌与地形遮挡校验。",
+        "同步适配宠物跟随、烈火箭、落叶斩、游戏内小地图、Buff 图标和金色掉落特效读取。"
       ]
     }
   ]
