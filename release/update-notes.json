@@ -1,23 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 140,
-    "commit": "b6cf0355fade0f26633c1a1d3ab8576309e9fb5c",
-    "tag": "build-140-b6cf035",
-    "exe_sha256": "56026a5a05b14188110b1a84da0c2afd4e2797ece1c4156a25b6f12d42e9f43f"
+    "build_number": 141,
+    "commit": "58129082e28b5aac0dbf5784f3fab04ed7ac5143",
+    "tag": "build-141-5812908",
+    "exe_sha256": "778699316ae86ee318da8c4bd34145d840f1f0d8676a26dcbfcb888b8f7beb71"
   },
-  "history_complete_after_build": 42,
+  "history_complete_after_build": 43,
   "entries": [
-    {
-      "note_id": "history-build-43",
-      "build_number": 43,
-      "commit": "bd530f6433db36982b06c18c27031ded126b7983",
-      "tag": "build-43-bd530f6",
-      "summary": [
-        "适配十月二十三日客户端更新，恢复移动、增益和地图数据读取。",
-        "修复部分地图传送点数据导致整张地图地形无法载入的问题。"
-      ]
-    },
     {
       "note_id": "history-build-44",
       "build_number": 44,
@@ -1011,6 +1001,15 @@
       "tag": "build-140-b6cf035",
       "summary": [
         "“聊天提醒”新增独立的队伍频道开关，默认关闭。开启后，队友的新发言可弹出系统通知，自己的发言和历史消息不补弹。"
+      ]
+    },
+    {
+      "note_id": "compact-drop-log-rows",
+      "build_number": 141,
+      "commit": "58129082e28b5aac0dbf5784f3fab04ed7ac5143",
+      "tag": "build-141-5812908",
+      "summary": [
+        "掉落记录和挂机监控的掉落日志不再显示地图和物品编号，保留时间、物品名称、金色或白名单标记以及拾取情况。"
       ]
     }
   ]
