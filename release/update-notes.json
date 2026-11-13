@@ -1,33 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 141,
-    "commit": "58129082e28b5aac0dbf5784f3fab04ed7ac5143",
-    "tag": "build-141-5812908",
-    "exe_sha256": "778699316ae86ee318da8c4bd34145d840f1f0d8676a26dcbfcb888b8f7beb71"
+    "build_number": 142,
+    "commit": "1ff397b2052ae82b7ac77da4b799036be88c42eb",
+    "tag": "build-142-1ff397b",
+    "exe_sha256": "dbb7c22b07ff7391d9b84602f371bdcda095bfd7f1786de23fa722ee583c531f"
   },
-  "history_complete_after_build": 43,
+  "history_complete_after_build": 45,
   "entries": [
-    {
-      "note_id": "history-build-44",
-      "build_number": 44,
-      "commit": "f1a8454dc6703ed1ef6a107c33d2b03f75b762fd",
-      "tag": "build-44-f1a8454",
-      "summary": [
-        "支持配置游戏攻击宏并按成员顺序确认施放。",
-        "恢复技能名称，补齐多职业攻击及落叶斩的移动攻击条件。"
-      ]
-    },
-    {
-      "note_id": "history-build-45",
-      "build_number": 45,
-      "commit": "e313dd321f8827a9e077b4e5bb985a0fea5b22c6",
-      "tag": "build-45-e313dd3",
-      "summary": [
-        "新怪观察等待支持随机时间上下限。",
-        "挂机监控可切换攻击和增益方案，以及运行日志和掉落日志。"
-      ]
-    },
     {
       "note_id": "history-build-46",
       "build_number": 46,
@@ -1010,6 +990,24 @@
       "tag": "build-141-5812908",
       "summary": [
         "掉落记录和挂机监控的掉落日志不再显示地图和物品编号，保留时间、物品名称、金色或白名单标记以及拾取情况。"
+      ]
+    },
+    {
+      "note_id": "pet-potion-stock-notices",
+      "build_number": 142,
+      "commit": "1ff397b2052ae82b7ac77da4b799036be88c42eb",
+      "tag": "build-142-1ff397b",
+      "summary": [
+        "宠物血药和蓝药低于各自阈值时只弹一次系统提示，不再停止或阻止启动策略。药量耗尽且仍在挂机时，每 30 秒再提示一次；补药或停止挂机后不再重复。"
+      ]
+    },
+    {
+      "note_id": "pickup-capacity-notice",
+      "build_number": 142,
+      "commit": "1ff397b2052ae82b7ac77da4b799036be88c42eb",
+      "tag": "build-142-1ff397b",
+      "summary": [
+        "「掉落提醒」新增默认开启的拾取提示开关。游戏右侧提示无法继续拾取时，Windows 弹窗提醒检查背包，策略继续运行。"
       ]
     }
   ]
