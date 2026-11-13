@@ -1,22 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 139,
-    "commit": "579bbc9798cbffc3a7084d6f327851d09dec1a69",
-    "tag": "build-139-579bbc9",
-    "exe_sha256": "bec3f26943ee8e36757c3248e614c662198e4eeda1eb195cdff27b3370ba54c2"
+    "build_number": 140,
+    "commit": "b6cf0355fade0f26633c1a1d3ab8576309e9fb5c",
+    "tag": "build-140-b6cf035",
+    "exe_sha256": "56026a5a05b14188110b1a84da0c2afd4e2797ece1c4156a25b6f12d42e9f43f"
   },
-  "history_complete_after_build": 41,
+  "history_complete_after_build": 42,
   "entries": [
-    {
-      "note_id": "history-build-42",
-      "build_number": 42,
-      "commit": "65ef7df0c9690373e6f00d4c279a9e37cd680685",
-      "tag": "build-42-65ef7df",
-      "summary": [
-        "角色靠近移动范围边缘时，可用的原地攻击不再被贴边撤离反复打断。"
-      ]
-    },
     {
       "note_id": "history-build-43",
       "build_number": 43,
@@ -1011,6 +1002,15 @@
       "summary": [
         "适配新版客户端的名称、地图和步行读取，并更新箭扫射启动预检的选敌与地形遮挡校验。",
         "同步适配宠物跟随、烈火箭、落叶斩、游戏内小地图、Buff 图标和金色掉落特效读取。"
+      ]
+    },
+    {
+      "note_id": "party-chat-notifications",
+      "build_number": 140,
+      "commit": "b6cf0355fade0f26633c1a1d3ab8576309e9fb5c",
+      "tag": "build-140-b6cf035",
+      "summary": [
+        "“聊天提醒”新增独立的队伍频道开关，默认关闭。开启后，队友的新发言可弹出系统通知，自己的发言和历史消息不补弹。"
       ]
     }
   ]
