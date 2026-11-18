@@ -1,226 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 142,
-    "commit": "1ff397b2052ae82b7ac77da4b799036be88c42eb",
-    "tag": "build-142-1ff397b",
-    "exe_sha256": "dbb7c22b07ff7391d9b84602f371bdcda095bfd7f1786de23fa722ee583c531f"
+    "build_number": 157,
+    "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+    "tag": "build-157-a48cd2a",
+    "exe_sha256": "70d7f09dcac43d61e9fa867359162eb14105d63d48af5a8d70daf92e5301609b"
   },
-  "history_complete_after_build": 45,
+  "history_complete_after_build": 70,
   "entries": [
-    {
-      "note_id": "history-build-46",
-      "build_number": 46,
-      "commit": "ed9a691b10f77ff2165f779a69a09bdec201cc3a",
-      "tag": "build-46-ed9a691",
-      "summary": [
-        "修复普通刷怪、怪物消失和空挥反复重置无伤害施放计时的问题。"
-      ]
-    },
-    {
-      "note_id": "history-build-47",
-      "build_number": 47,
-      "commit": "e8bc29c0d5958936182061ef24e975ae8f40c2ca",
-      "tag": "build-47-e8bc29c",
-      "summary": [
-        "不再为群攻规划圈外站位，合法站位只能打到一只时优先可用单体。",
-        "日志新增独立报警记录页，脚本超时等异常停机也会触发报警。"
-      ]
-    },
-    {
-      "note_id": "update-history-overview-20261024",
-      "build_number": 48,
-      "commit": "b36009fbeb1e37017feb44ea90ee3e6d0cff501d",
-      "tag": "build-48-b36009f",
-      "summary": [
-        "更新面板增加历史更新概览，可按版本查看构建 1～47 中 46 个真实发布版本的简要更新内容。",
-        "源码和本地版本也可离线浏览正式历史，尚未发布的本地改动单独显示。",
-        "更新说明未发布、网络失败和校验失败分别提示，可独立重试说明，不打断下载或安装准备。"
-      ]
-    },
-    {
-      "note_id": "updater-resume-notes-20261024",
-      "build_number": 48,
-      "commit": "b36009fbeb1e37017feb44ea90ee3e6d0cff501d",
-      "tag": "build-48-b36009f",
-      "summary": [
-        "正式版本号随每次构建递增；独立更新面板集中显示进度、速度和预计剩余时间。",
-        "下载支持暂停、断网重连和退出后继续，弱网中断保留已下载内容，校验完成后再安装重启。",
-        "更新面板直接展示本次及跨版本更新简述，说明从每次提交的 changelog 自动生成。"
-      ]
-    },
-    {
-      "note_id": "release-payload-eol-20261024",
-      "build_number": 49,
-      "commit": "4b5c5c8864350769086a6f8cec9c3ace3f133c81",
-      "tag": "build-49-4b5c5c8",
-      "summary": [
-        "修复发布过程中更新说明行尾被 Git 转换、导致最终哈希校验失败的问题；保留完整的原始文件校验。"
-      ]
-    },
-    {
-      "note_id": "chat-notifications-logs-20261024",
-      "build_number": 50,
-      "commit": "e5a46971329b8ceeb6b588e5fb8c9ba656fe9234",
-      "tag": "build-50-e5a4697",
-      "summary": [
-        "新增“聊天提醒”开关，可为其他玩家的所有人频道新消息显示系统提示，自动排除自身发言。",
-        "所有人与组队聊天支持分别保存日志，包含自身发言；日志与提醒可独立开关，设置自动保存。",
-        "初次连接不回放旧消息，关闭提醒或切换角色会清除待发提示；聊天不播放掉落语音，也不会被金色掉落清除。"
-      ]
-    },
-    {
-      "note_id": "bow-terrain-targeting-20261024",
-      "build_number": 51,
-      "commit": "02e5e01893634f214fd8981687b6cf39735ae6fb",
-      "tag": "build-51-02e5e01",
-      "summary": [
-        "修复箭扫射/四连射只按射程矩形判断、隔着起伏地面连续空放后触发不掉血报警的问题；遇到遮挡时先在允许范围内寻找可射击站位。",
-        "恢复对较高平台及移动范围外、但可从范围内真实选中的目标判断。保留攻击连续持键和 100ms 重复间隔，不增加施放等待。"
-      ]
-    },
-    {
-      "note_id": "fullscreen-chat-positioning-map-range-20261026",
-      "build_number": 58,
-      "commit": "752a9d0a782184c1f60685b4f4d7c59804c1c644",
-      "tag": "build-58-752a9d0",
-      "summary": [
-        "聊天新增可选全屏优先横幅与 Windows 系统通知短音，连续消息即时合并；运行日志和挂机监控可切换查看聊天记录。",
-        "群攻技能可优先短距离调整站位，途中能攻击多个目标时立即出手；地图移动范围支持按地图共用或随攻击策略分别保存。",
-        "修复聊天旧摘要被丢弃、部分掉落声音提交失败不重试的问题，并补齐更新说明以恢复新版安装包发布。"
-      ]
-    },
-    {
-      "note_id": "manual-runtime-expedition-20261026",
-      "build_number": 59,
-      "commit": "ac551e91076ba90d175e7355ee123f1c67608cfc",
-      "tag": "build-59-ac551e9",
-      "summary": [
-        "新增“远征模式”：每次开始挂机默认关闭，运行后可手动开启，临时忽略攻击白名单及战斗异常报警。",
-        "狩猎验证、巡查、地图广播和运行安全保护继续生效；关闭模式恢复原设置，停止或重新挂机不会继承。"
-      ]
-    },
-    {
-      "note_id": "buster-depth-expedition-priority-20261026",
-      "build_number": 60,
-      "commit": "89c1f3b6e7e61d847c62df37bd9c52926232f99e",
-      "tag": "build-60-89c1f3b",
-      "summary": [
-        "枪连击新增专属进范围深度百分比，深入后才起手，持续攻击保留完整射程，减少卡边和反复短移。",
-        "远征模式旁新增优先锁定下拉框，也可在地图点选怪物设为优先目标；死亡、离场或开始新一轮后清除。"
-      ]
-    },
-    {
-      "note_id": "puppet-buff-facing-20261026",
-      "build_number": 61,
-      "commit": "339e619dda661e0ce12f2b9e500199d695dc4052",
-      "tag": "build-61-339e619",
-      "summary": [
-        "弓手和弩手替身术支持单独加入技能优先级，只有自身替身 Buff 实际消失后才补放，效果仍存在时不重复释放。",
-        "增加默认关闭的“转身释放”，随策略保存；默认朝攻击方向释放，勾选后先确认转身再施放。"
-      ]
-    },
-    {
-      "note_id": "silver-hawk-auto-buff-20261027",
-      "build_number": 61,
-      "commit": "339e619dda661e0ce12f2b9e500199d695dc4052",
-      "tag": "build-61-339e619",
-      "summary": [
-        "自动 Buff 支持单独添加银鹰召唤，只有对应效果实际消失后才补放，存在期间不提前刷新。",
-        "召唤前读取真实等级、蓝量、前置技能和召唤石数量，条件不足时提示等待。"
-      ]
-    },
-    {
-      "note_id": "client-compatibility-20261027",
-      "build_number": 62,
-      "commit": "9321bfa6bf462a90dded0b072da2d997831d8df8",
-      "tag": "build-62-9321bfa",
-      "summary": [
-        "适配新版客户端的地图资源与移动读取，补充新版地图物件的加载支持。",
-        "修复客户端更新后 Buff 图标、掉落特效、落叶斩和弓系目标判断的兼容问题。"
-      ]
-    },
-    {
-      "note_id": "combat-edge-chase-20261027",
-      "build_number": 63,
-      "commit": "4d8f04facb8a62efd45928f163780c380ed9c74c",
-      "tag": "build-63-4d8f04f",
-      "summary": [
-        "修复追怪到移动边缘后反复向内撤离、又向外追怪造成的左右摇摆。",
-        "追怪选点提前预留实时速度对应的停步距离，撤离后不会再次追向无法安全到达的站位；当前位置已经能攻击或治疗时继续施放。"
-      ]
-    },
-    {
-      "note_id": "combat-pe-timestamp-20261027",
-      "build_number": 64,
-      "commit": "fa2fca87ffa01319f20ae926d9b156d0b1c4f994",
-      "tag": "build-64-fa2fca8",
-      "summary": [
-        "修复箭扫射和落叶斩因客户端编译时间戳变化，被误判为尚未兼容、无法开始挂机的问题。"
-      ]
-    },
-    {
-      "note_id": "all-job-client-compatibility-20261027-evening",
-      "build_number": 65,
-      "commit": "5b81e6c4cd1e6eb2758e156d21a9fc7225338d00",
-      "tag": "build-65-5b81e6c",
-      "summary": [
-        "修复客户端再次更新后技能名称、攻击技能列表和宏成员名称无法加载的问题。",
-        "适配新版 Buff 图标和掉落特效读取，保留既有角色配置与技能方案。"
-      ]
-    },
-    {
-      "note_id": "run-drop-log-clear-20261028",
-      "build_number": 66,
-      "commit": "06b9cc00068635c466552084ca3ef943e6190e45",
-      "tag": "build-66-06b9cc0",
-      "summary": [
-        "运行日志与掉落日志增加“清空列表”，日志页和挂机监控均可使用。",
-        "仅清空当前显示，后续新记录继续显示；保留已保存的运行诊断日志，已清空掉落不会因后续金光更新重新出现。",
-        "掉落记录可显示实际拾取玩家，宠物拾取显示其归属玩家；没有捕获到对应拾取信息时明确标为未确认。"
-      ]
-    },
-    {
-      "note_id": "client-compatibility-20261028",
-      "build_number": 67,
-      "commit": "26a39787189f5d3889ecc2d2f6d2fba90b09b288",
-      "tag": "build-67-26a3978",
-      "summary": [
-        "修复新版客户端的受保护地图、技能与怪物名称读取。",
-        "适配玩家移动、宠物隔离、Buff 图标、掉落特效，以及落叶斩和弓弩选敌的新版位置。"
-      ]
-    },
-    {
-      "note_id": "adaptive-map-walking-20261028",
-      "build_number": 68,
-      "commit": "20a02df2fc16f4a34a729b5cff73cf9f1c32ec13",
-      "tag": "build-68-20a02df",
-      "summary": [
-        "地图、技能和怪物名称、玩家移动增加受限自动适配，减少客户端仅调整已知代码位置时的重复更新。",
-        "保留完整校验；无法确认的代码或数据变化仍会提示不兼容。"
-      ]
-    },
-    {
-      "note_id": "adaptive-buff-drop-attack-20261028",
-      "build_number": 69,
-      "commit": "8490912d58333b860f386e1fdc28f84a12e7941a",
-      "tag": "build-69-8490912",
-      "summary": [
-        "Buff 图标、掉落特效、落叶斩和弓弩选敌接入受限自动适配，减少客户端仅调整已知代码位置时的重复修复。",
-        "保留旧版本支持和完整校验；代码逻辑或数据结构发生无法确认的变化时，仍提示不兼容。"
-      ]
-    },
-    {
-      "note_id": "expanded-combat-skills-20261028",
-      "build_number": 70,
-      "commit": "75d540482f843cbea358074ee65cd2ac590a0bd1",
-      "tag": "build-70-75d5404",
-      "summary": [
-        "修复属性攻击的范围识别，并新增支持 41 项非战神攻击技能，覆盖部分近战、法术、弓弩、飞镖及能量、变身攻击。",
-        "末日烈焰会等待最终施法动作结束，再恢复移动和 Buff；特殊条件失效时停止攻击，避免重复按键或打断。",
-        "本次仍非全技能覆盖；蓄力、持续攻击、链式攻击及部分召唤等功能尚未完成。"
-      ]
-    },
     {
       "note_id": "late-client-and-damage-buffs-20261028",
       "build_number": 71,
@@ -1008,6 +795,211 @@
       "tag": "build-142-1ff397b",
       "summary": [
         "「掉落提醒」新增默认开启的拾取提示开关。游戏右侧提示无法继续拾取时，Windows 弹窗提醒检查背包，策略继续运行。"
+      ]
+    },
+    {
+      "note_id": "arrow-strafe-release-distance",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "战斗技能中的箭扫射新增「限制释放距离」，可随策略保存，默认关闭，沿用原来的攻击逻辑。",
+        "开启后会在划定的移动范围内接近目标。填 200 时，只有与实际选中目标的水平距离小于 200 地图像素且能命中才会出手，目标达到或超出设定距离时会松键重新找站位。"
+      ]
+    },
+    {
+      "note_id": "buff-startup-live-state-20261118",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "开始或恢复挂机时先读取自身 Buff。已有的效果继续使用，启动时快到期的效果用到到期再补。",
+        "准备施放时会再次确认当前效果。已补齐的 Buff 会跳过，避免重复按技能或宏。"
+      ]
+    },
+    {
+      "note_id": "close-jump-observed-airborne-20261117",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "近身跳攻先保持方向并起跳，确认实际离地后再按当前位置核对全部动作范围和目标数量，只施放一次。",
+        "重复采样、目标失效、技能或输入条件变化时不提前出招，松键等待实际落地后继续检查。"
+      ]
+    },
+    {
+      "note_id": "dll-compat-20261114",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "适配新版客户端的地图与名称、步行、宠物、自身 Buff 图标和金色掉落读取。",
+        "更新弓系目标与落叶斩读取，并核对烈火箭和游戏内小地图的兼容情况。"
+      ]
+    },
+    {
+      "note_id": "dll-compat-20261115",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "恢复新版客户端的地图布局、技能与怪物名称、游戏内小地图，以及玩家和宠物的移动数据读取。",
+        "适配自身 Buff 图标、金色掉落和弓系目标、烈火箭、落叶斩的读取。"
+      ]
+    },
+    {
+      "note_id": "dll-compat-20261117",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "适配新版客户端的地图与名称资源、玩家和宠物移动、游戏内小地图读取。",
+        "更新自身 Buff 图标、金色掉落、弓系目标、烈火箭及落叶斩的兼容规则；OGL 与 DX12 共用。"
+      ]
+    },
+    {
+      "note_id": "easy-balrog-reflection",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "修复巨魔蝙蝠怪（简单）开启反伤后，远征模式仍持续施放箭扫射的问题。助手现在识别该技能的实际状态，检测到反伤就松键暂停，确认反伤解除且角色稳定落地后再恢复。"
+      ]
+    },
+    {
+      "note_id": "expedition-reverse-input-20261118",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "远征模式检测到自身方向反转时自动对调左右键，确认效果消失后恢复正常输入。",
+        "上下移动等待方向恢复。转场中途发生方向切换时先松键，等角色落地站稳后继续。"
+      ]
+    },
+    {
+      "note_id": "expedition-session-indicator-20261118",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "每次打开 Helper 时远征模式默认关闭。手动勾选后，同一游戏标签在本次运行中跨换图、换角色和断开重连保留勾选。",
+        "切图或换角色后恢复自动选怪，旧的优先目标随原地图和角色失效。",
+        "已勾选的标签标注「远征」，窗口顶部显示紫色状态条。连接未就绪或正在使用进阶脚本时，会提示远征模式尚未应用。"
+      ]
+    },
+    {
+      "note_id": "fire-arrow-collector-layout-20261117",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "烈火箭新增客户端布局校验，避免选敌入口地址相同时误判新旧布局兼容。"
+      ]
+    },
+    {
+      "note_id": "foreground-self-buff-list-20261114",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "在“自动补充”中直接勾选需要取消的自身 Buff，宏内可逐项选择。队友施加的效果可从当前自身 Buff 中添加为仅取消，无需绑定技能键。",
+        "游戏在前台时定位并右键取消。切到后台或最小化时等待手动切回，助手施放的 Buff 宏会先完成整组再取消名单中的效果。"
+      ]
+    },
+    {
+      "note_id": "inventory-full-capacity-notice-20261114",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "新增「背包满栏系统提示」，默认开启。装备、消耗、其他或现金栏没有空格时发送一次 Windows 通知；腾出空间后再满会重新提醒。无需打开背包或启动挂机，游戏最小化也能检查。设置栏不参与。"
+      ]
+    },
+    {
+      "note_id": "inventory-turn-input-feedback-20261118",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "短移转向未观察到游戏实际响应时，松键等待后再检查，避免操作背包期间连续累计为移动受阻。",
+        "确认朝向后仍等待松键后的新鲜状态再衔接攻击，已经实际移动后卡住的保护继续保留。"
+      ]
+    },
+    {
+      "note_id": "local-control-notification-log-20261117",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "为单独启用的本机扩展提供查询挂机状态、暂停和开始接口，复用助手原有保护及启动流程。",
+        "已发布的聊天、关注掉落、背包满栏和宠物药品等通知写入统一的本地记录，供本机扩展按类别读取。"
+      ]
+    },
+    {
+      "note_id": "maplehelper-executable-name",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "Windows 主程序名称统一为 MapleHelper.exe。手动下载时请保存为此名称；使用应用内更新会保留当前安装文件名。"
+      ]
+    },
+    {
+      "note_id": "movement-feedback-strategy-timing-20261117",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "普通走位尚未观察到角色响应时，松键并间隔检查，不再把极短输入连续计为阻挡失败。已经走动后卡住的有限解卡规则继续保留。",
+        "增加策略内部函数的调用次数、自身及累计耗时记录；执行超时也会保留中断位置，便于区分站位搜索、路线规划与动作确认的开销。"
+      ]
+    },
+    {
+      "note_id": "on-hit-self-buff",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "在「自动补充 → 添加 Buff… → 命中触发」里可选择神通术等已单独绑键的近战技能。自身缺少效果且面前有可命中的合格目标时，助手才会尝试施放。",
+        "成功后以自身 Buff 图标确认。未偷取成功时继续原来的战斗，至少 3 秒后再次尝试。效果图标与施放技能不同时，可在规则中选择实际图标。"
+      ]
+    },
+    {
+      "note_id": "pet-potion-stock-audio-20261114",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "宠物血药和蓝药低于各自阈值时只弹一次带提示音的系统通知，不再停止或阻止启动策略。药量耗尽且仍在挂机时，每 30 秒再提示一次；补药或停止挂机后不再重复。"
+      ]
+    },
+    {
+      "note_id": "received-whisper-log",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "「聊天提醒」新增「记录收到的私聊」。开启后，别人新发来的密语可在「聊天日志 → 私聊」中查看。此开关独立于私聊弹窗，不记录自己发出的消息。"
+      ]
+    },
+    {
+      "note_id": "sampling-cadence-timings-20261114",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "修复慢采样完成后仍额外等待 50 毫秒的问题，按采样起点补足剩余间隔，减少数据过期和反复暂停。",
+        "连接诊断和运行日志新增附加任务耗时，便于排查背包、聊天及掉落等工作造成的采样延迟。"
+      ]
+    },
+    {
+      "note_id": "title-close-exits-helper",
+      "build_number": 157,
+      "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
+      "tag": "build-157-a48cd2a",
+      "summary": [
+        "点击右上角 X 会停止挂机、保存会话草稿并退出助手，不再隐藏到系统托盘。",
+        "移除助手主窗口的常驻系统托盘入口；最小化后通过任务栏恢复窗口。"
       ]
     }
   ]
