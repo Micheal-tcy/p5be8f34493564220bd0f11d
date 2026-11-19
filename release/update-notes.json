@@ -1,24 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 160,
-    "commit": "13834f00ada53057840ed38c278049e010db5aa2",
-    "tag": "build-160-13834f0",
-    "exe_sha256": "9b1195d3404d5830961462af3189012c4cedf62163b5cba0ec8c3542d8cbb632"
+    "build_number": 162,
+    "commit": "a6e2d78a55a85466be261abb8331a489048fa54d",
+    "tag": "build-162-a6e2d78",
+    "exe_sha256": "d3f5df0af5dd97348dc086b5929085cd8fce6d88e61143b9e5125e0071eac6f3"
   },
-  "history_complete_after_build": 73,
+  "history_complete_after_build": 74,
   "entries": [
-    {
-      "note_id": "expedition-selection-20261029",
-      "build_number": 74,
-      "commit": "2ed29b53f6df1306b87de2eab269010ece960068",
-      "tag": "build-74-2ed29b5",
-      "summary": [
-        "远征模式支持开始前勾选和选择目标，同一连接下停止再启动可继续使用临时选择。",
-        "Boss 多部位在目标列表与地图显示一致的序号，当前锁定目标在地图突出显示。",
-        "运行中可以更换或取消锁定；已发起的宏、准备施法及转场按安全规则结束后再切换，避免误停或重发。"
-      ]
-    },
     {
       "note_id": "local-log-time-20261029",
       "build_number": 75,
@@ -999,6 +988,17 @@
       "summary": [
         "在「专注编辑 → 调试」可手动保存游戏状态和一帧游戏窗口。截图失败时，已保存的状态和失败原因仍会保留。",
         "配合飞书扩展处理验证后，助手确认本轮通过并核对其他保护条件，再尝试恢复挂机。"
+      ]
+    },
+    {
+      "note_id": "priest-skill-support-20261119",
+      "build_number": 162,
+      "commit": "a6e2d78a55a85466be261abb8331a489048fa54d",
+      "tag": "build-162-a6e2d78",
+      "summary": [
+        "攻击技能可添加圣箭术，按首个可命中的目标决定出手。",
+        "自动 Buff 可单独添加圣龙召唤，自身效果消失且召回石充足时补召。",
+        "自动解除异常可勾选「优先使用净化」。被封印或净化暂不可用时，可用万能疗伤药解除药剂支持的异常。"
       ]
     }
   ]
