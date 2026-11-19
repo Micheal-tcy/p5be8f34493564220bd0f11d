@@ -1,24 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 157,
-    "commit": "a48cd2a2ccb426c35a5d9ae2bbaacb205fa6b525",
-    "tag": "build-157-a48cd2a",
-    "exe_sha256": "70d7f09dcac43d61e9fa867359162eb14105d63d48af5a8d70daf92e5301609b"
+    "build_number": 158,
+    "commit": "09bfc6801933bfd74dcbea6a7ce8fc5c84d134d9",
+    "tag": "build-158-09bfc68",
+    "exe_sha256": "ac55683a5581957e664f3661a4ebc81c1d900dff19d423a7d3b75fd7b397dfdf"
   },
-  "history_complete_after_build": 70,
+  "history_complete_after_build": 71,
   "entries": [
-    {
-      "note_id": "late-client-and-damage-buffs-20261028",
-      "build_number": 71,
-      "commit": "e31567a94bde21af839a5afceb2e9faf3ab44706",
-      "tag": "build-71-e31567a",
-      "summary": [
-        "适配晚间客户端更新，修复角色数据过期导致的“请先连接角色并等待实时坐标”，恢复地图、名称、移动、Buff 图标、掉落及已有攻击读取。",
-        "修正骑士属性赋予等增益的分类：烈焰钝器等技能的伤害倍率不再被误认为一次攻击，单技能和纯 Buff 宏均使用正确分类。",
-        "仍拒绝真正攻击、未知和不完整定义；保留现有策略与个人配置。"
-      ]
-    },
     {
       "note_id": "ordinary-attack-prepare-guard-20261028",
       "build_number": 72,
@@ -1000,6 +989,16 @@
       "summary": [
         "点击右上角 X 会停止挂机、保存会话草稿并退出助手，不再隐藏到系统托盘。",
         "移除助手主窗口的常驻系统托盘入口；最小化后通过任务栏恢复窗口。"
+      ]
+    },
+    {
+      "note_id": "dll-compat-20261119",
+      "build_number": 158,
+      "commit": "09bfc6801933bfd74dcbea6a7ce8fc5c84d134d9",
+      "tag": "build-158-09bfc68",
+      "summary": [
+        "适配 11 月 19 日版 NewMaple 客户端的地图、怪物名称、玩家步行和宠物跟随读取，解决更新后对应数据无法通过兼容校验的问题。",
+        "更新箭扫射选敌与地形遮挡的启动检查，同步适配烈火箭、落叶斩、小地图、自身 Buff 图标和金色掉落读取。"
       ]
     }
   ]
