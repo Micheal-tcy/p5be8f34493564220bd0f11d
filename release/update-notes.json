@@ -1,33 +1,13 @@
 {
   "schema": 1,
   "target": {
-    "build_number": 158,
-    "commit": "09bfc6801933bfd74dcbea6a7ce8fc5c84d134d9",
-    "tag": "build-158-09bfc68",
-    "exe_sha256": "ac55683a5581957e664f3661a4ebc81c1d900dff19d423a7d3b75fd7b397dfdf"
+    "build_number": 160,
+    "commit": "13834f00ada53057840ed38c278049e010db5aa2",
+    "tag": "build-160-13834f0",
+    "exe_sha256": "9b1195d3404d5830961462af3189012c4cedf62163b5cba0ec8c3542d8cbb632"
   },
-  "history_complete_after_build": 71,
+  "history_complete_after_build": 73,
   "entries": [
-    {
-      "note_id": "ordinary-attack-prepare-guard-20261028",
-      "build_number": 72,
-      "commit": "3537469b421264169009ebb1f4d548700feb720b",
-      "tag": "build-72-3537469",
-      "summary": [
-        "修复箭雨、箭扫射等普通攻击被误判为外部准备施法，等待后停止挂机的问题。",
-        "普通攻击保持原释放节奏；末日烈焰和真实外部准备施法继续保留生命周期保护。"
-      ]
-    },
-    {
-      "note_id": "roar-no-chase-20261029",
-      "build_number": 73,
-      "commit": "fb154d86207f926d92e535f1874cd711b0c5be48",
-      "tag": "build-73-fb154d8",
-      "summary": [
-        "龙咆哮的技能设置新增“不寻怪”：只在当前位置满足施放条件时攻击，不为该技能追怪或寻找群攻站位。",
-        "默认关闭，原有方案保持原行为；是否允许无怪施放仍由“忽略目标数量”单独控制。"
-      ]
-    },
     {
       "note_id": "expedition-selection-20261029",
       "build_number": 74,
@@ -999,6 +979,26 @@
       "summary": [
         "适配 11 月 19 日版 NewMaple 客户端的地图、怪物名称、玩家步行和宠物跟随读取，解决更新后对应数据无法通过兼容校验的问题。",
         "更新箭扫射选敌与地形遮挡的启动检查，同步适配烈火箭、落叶斩、小地图、自身 Buff 图标和金色掉落读取。"
+      ]
+    },
+    {
+      "note_id": "dll-compat-20261119-late",
+      "build_number": 160,
+      "commit": "13834f00ada53057840ed38c278049e010db5aa2",
+      "tag": "build-160-13834f0",
+      "summary": [
+        "适配晚间更新后的 NewMaple DLL，恢复地图和名称、步行和宠物跟随、小地图、自身 Buff 及金色掉落的读取。",
+        "更新弓系目标收集、烈火箭及落叶斩的读取校验，继续兼容此前的客户端版本。"
+      ]
+    },
+    {
+      "note_id": "manual-diagnostics-verification-resume-20261119",
+      "build_number": 160,
+      "commit": "13834f00ada53057840ed38c278049e010db5aa2",
+      "tag": "build-160-13834f0",
+      "summary": [
+        "在「专注编辑 → 调试」可手动保存游戏状态和一帧游戏窗口。截图失败时，已保存的状态和失败原因仍会保留。",
+        "配合飞书扩展处理验证后，助手确认本轮通过并核对其他保护条件，再尝试恢复挂机。"
       ]
     }
   ]
